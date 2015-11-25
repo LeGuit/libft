@@ -6,68 +6,95 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:33:27 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/25 14:13:40 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/25 17:49:46 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
-/*
-char	**ft_strsplit(char const *s, char c)
-{
-	char	**res;
-	int		count;
-	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
-	res = NULL;
-	while (s[i])
+size_t	nb_str(char const *s, char c)
+{
+	size_t	res;
+
+	res = 0;
+	while (*s)
 	{
-		count = 0;
-		if (s[i + count != c])
+		while (*s == c)
+			s++;
+		if (*s != c && *s)
 		{
-			while (s[i + count] != c)
-				count++;
-			res[i] = ft_strnew(count + 1);
-			while (count > 0)
-			{
-				res[j][count] = s[i + count];
-				count--;
-			}
-			j++;
-			i += count;
+			s++;
+			res++;
+			while (*s != c && *s)
+				s++;
 		}
-		i++;
 	}
 	return (res);
-}*/
+}
+
+char	*add_word(size_t size, char const *s)
+{
+	char	*res;
+
+	res = ft_strnew(size);
+	res = ft_strncpy(res, s, size - 1);
+	return (res);
+}
+
+size_t	ft_strlen_ch(char const *s, char c)
+{
+	size_t	size;
+
+	size = 0;
+	while (*s != c && *s)
+	{
+		s++;
+		size++;
+	}
+	return (size);
+}
 
 char	**ft_strsplit(char const *s, char c)
 {
-	int		count;
-	char	*tmp;
+	size_t	count;
 	char	**res;
-	int		index;
+	size_t	index;
 
-	res = NULL;
+	if (!(res = (char **)malloc(sizeof(char *) * (nb_str(s, c) + 1))))
+		return (NULL);
 	index = 0;
-	while(*s)
+	ft_putnbr(nb_str(s, c));
+	while (index <= nb_str(s, c))
 	{
+		while (*s == c)
+			s++;
 		count = 0;
 		if (*s != c)
 		{
-			tmp = (char *)s;
-			while (*tmp != c)
-			{
-				count++;
-				tmp++;
-			}
-			res[index] = ft_strnew(count + 1);
-			res[index] = ft_strncpy(res[index], s, count + 1);
+			count = ft_strlen_ch(s, c);
+			res[index] = add_word(count + 1, s);
+			s += count;
 		}
 		index++;
-		s++;
 	}
+	res[index] = 0;
 	return (res);
+}
+
+int main()
+{
+	char **test;
+
+	test = ft_strsplit("***salut***!*", '*');
+	printf("result : %s\n", test[0]);
+	printf("result : %s\n", test[1]);
+	printf("result : %s\n", test[2]);
+	test = ft_strsplit("**************", '*');
+	printf("result : %s\n", test[0]);
+	printf("result : %s\n", test[1]);
+	test = ft_strsplit("***test****", '*');
+	printf("result : %s\n", test[0]);
+	printf("result : %s\n", test[1]);
+	return(0);
 }
