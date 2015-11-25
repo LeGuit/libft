@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/11/25 11:32:09 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/11/25 13:42:52 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ SRCS =	ft_atoi.c \
 		ft_strstr.c \
 		ft_strsub.c \
 		ft_strtrim.c \
+		ft_strsplit.c \
 		ft_tolower.c \
 		ft_toupper.c \
 		ft_lstnew.c \
