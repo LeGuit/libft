@@ -6,11 +6,30 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:32:11 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/23 17:32:51 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/25 11:03:24 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int		size_blanck_less(char const *s)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
+		i++;
+	if (i == ft_strlen(s))
+		return (1);
+	j = ft_strlen(s) - 1;
+	while (s[j] == ' ' || s[j] == '\n' || s[j] == '\t')
+	{
+		i++;
+		j--;
+	}
+	return (ft_strlen(s) - i + 1);
+}
 
 char	*ft_strtrim(char const *s)
 {
@@ -18,22 +37,16 @@ char	*ft_strtrim(char const *s)
 	char	*res;
 	size_t	j;
 
-	i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	j = i;
-	s += (ft_strlen(s) - 1);
+	j = size_blanck_less(s);
+	res = ft_strnew(j);
 	while (*s == ' ' || *s == '\n' || *s == '\t')
-	{
-		i++;
-		s--;
-	}
-	res = ft_strnew(i);
+		s++;
 	i = 0;
-	while (i < ft_strlen(res))
+	while (i < j - 1)
 	{
-		res[i] = s[j + i];
+		res[i] = *s;
 		i++;
+		s++;
 	}
 	return (res);
 }
