@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/11/24 13:29:18 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/11/25 11:32:09 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ SRCS =	ft_atoi.c \
 		ft_memalloc.c \
 		ft_memccpy.c \
 		ft_memcpy.c \
+		ft_memrcpy.c \
 		ft_memdel.c \
 		ft_memmove.c \
 		ft_memset.c \

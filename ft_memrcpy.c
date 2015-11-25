@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/23 17:30:45 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/25 12:50:25 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 14:14:03 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/11/25 12:14:14 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	*ft_memrcpy(void *dst, const void *src, size_t n)
 {
-	char	*res;
-	int		i;
+	unsigned char	*tsrc;
+	unsigned char	*tdst;
 
-	if (!s)
-		return (NULL);
-	res = ft_strnew(len);
-	i = 0;
-	while (i < (int)len)
+	tsrc = (unsigned char *)src;
+	tdst = (unsigned char *)dst;
+	tsrc += n;
+	tdst += n;
+	while (n > 0)
 	{
-		res[i] = s[start + i];
-		i++;
+		*tdst = *tsrc;
+		ft_putchar(*tdst);
+		tdst--;
+		tsrc--;
+		n--;
 	}
-	return (res);
+	return (dst);
 }
