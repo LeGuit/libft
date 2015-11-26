@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:33:27 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/25 17:49:46 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 10:24:01 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,10 @@ char	**ft_strsplit(char const *s, char c)
 
 	if (!(res = (char **)malloc(sizeof(char *) * (nb_str(s, c) + 1))))
 		return (NULL);
+	res[0] = NULL;
+	if (nb_str(s, c) == 0)
+		return (res);
 	index = 0;
-	ft_putnbr(nb_str(s, c));
 	while (index <= nb_str(s, c))
 	{
 		while (*s == c)
@@ -80,21 +82,4 @@ char	**ft_strsplit(char const *s, char c)
 	}
 	res[index] = 0;
 	return (res);
-}
-
-int main()
-{
-	char **test;
-
-	test = ft_strsplit("***salut***!*", '*');
-	printf("result : %s\n", test[0]);
-	printf("result : %s\n", test[1]);
-	printf("result : %s\n", test[2]);
-	test = ft_strsplit("**************", '*');
-	printf("result : %s\n", test[0]);
-	printf("result : %s\n", test[1]);
-	test = ft_strsplit("***test****", '*');
-	printf("result : %s\n", test[0]);
-	printf("result : %s\n", test[1]);
-	return(0);
 }
