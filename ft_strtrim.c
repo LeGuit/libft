@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:32:11 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/25 11:03:24 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 13:12:01 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		size_blanck_less(char const *s)
+static int	size_blanck_less(char const *s)
 {
 	size_t	i;
 	size_t	j;
@@ -31,7 +31,7 @@ int		size_blanck_less(char const *s)
 	return (ft_strlen(s) - i + 1);
 }
 
-char	*ft_strtrim(char const *s)
+char		*ft_strtrim(char const *s)
 {
 	size_t	i;
 	char	*res;
