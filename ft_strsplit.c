@@ -6,14 +6,14 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:33:27 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/26 10:24:01 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 13:09:01 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-size_t	nb_str(char const *s, char c)
+static size_t	nb_str(char const *s, char c)
 {
 	size_t	res;
 
@@ -33,7 +33,7 @@ size_t	nb_str(char const *s, char c)
 	return (res);
 }
 
-char	*add_word(size_t size, char const *s)
+static char		*add_word(size_t size, char const *s)
 {
 	char	*res;
 
@@ -42,7 +42,7 @@ char	*add_word(size_t size, char const *s)
 	return (res);
 }
 
-size_t	ft_strlen_ch(char const *s, char c)
+static size_t	ft_strlen_ch(char const *s, char c)
 {
 	size_t	size;
 
@@ -55,7 +55,7 @@ size_t	ft_strlen_ch(char const *s, char c)
 	return (size);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	size_t	count;
 	char	**res;
