@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:24:57 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/24 11:32:29 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 15:56:23 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,20 @@ t_list		*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*res_list;
 
-	if (!(res_list = (t_list*)malloc(sizeof(*content) * content_size)))
+	if (!(res_list = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
+	res_list->next = NULL;
+	if (content == NULL)
+	{
+		res_list->content = NULL;
+		res_list->content_size = 0;
+	}
 	else
 	{
-		res_list->content = (void *)content;
-		res_list->next = NULL;
+		if (!(res_list->content = malloc(content_size)))
+			return (NULL);
+		ft_memmove(res_list->content, content, content_size);
+		res_list->content_size = content_size;
 	}
 	return (res_list);
 }

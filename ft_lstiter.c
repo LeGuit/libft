@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 18:27:24 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/23 18:27:25 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 13:52:58 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	while (lst->next)
+	while (lst)
 	{
 		f(lst);
 		lst = lst->next;
