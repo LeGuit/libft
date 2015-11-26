@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:59:56 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/25 13:38:25 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/26 13:13:05 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		size_str(int n)
+static int	size_str(int n)
 {
 	int		i;
 
@@ -27,7 +27,7 @@ int		size_str(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	int		i;
 	char	*res;
