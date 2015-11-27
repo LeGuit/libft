@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/26 13:19:04 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/27 11:19:32 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void				ft_memdel(void **ap);
 ** Fonction String libc
 */
 size_t				ft_strlen(const char *s);
+size_t				ft_strlen(char const *s, char c);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
