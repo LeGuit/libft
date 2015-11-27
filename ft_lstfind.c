@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 11:51:12 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/27 12:00:29 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/27 15:14:07 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 t_list	*ft_lstfind(t_list *blist, void *ref, int (*cmp)())
 {
-	if (!*blist)
+	if (!blist)
 		return (NULL);
-	while (*blist)
+	while (blist)
 	{
 		if (cmp(blist->content, ref) == 0)
 			return (blist);
-		*blist = (*blist)->next;
+		blist = blist->next;
 	}
 	return (NULL);
 }
