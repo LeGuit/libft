@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/27 16:06:40 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/30 11:19:03 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
+char				*ft_strealloc(char *str, size_t size);
 /*
 ** Fonction Test
 */
