@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/11/30 11:19:22 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/11/30 21:00:30 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,12 +74,10 @@ SRCS =	ft_atoi.c \
 		ft_lstdelone.c \
 		ft_lstdel.c \
 		ft_lstadd.c \
-		ft_lstadd_last.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_strlen_ch.c \
 		ft_lstfind.c \
-		ft_strealloc.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 17:33:27 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/26 13:09:01 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/11/30 20:58:29 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,6 @@ static char		*add_word(size_t size, char const *s)
 	res = ft_strnew(size);
 	res = ft_strncpy(res, s, size - 1);
 	return (res);
-}
-
-static size_t	ft_strlen_ch(char const *s, char c)
-{
-	size_t	size;
-
-	size = 0;
-	while (*s != c && *s)
-	{
-		s++;
-		size++;
-	}
-	return (size);
 }
 
 char			**ft_strsplit(char const *s, char c)
