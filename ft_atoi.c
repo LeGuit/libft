@@ -6,11 +6,11 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/23 12:10:26 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/11/24 13:52:39 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/02 22:58:32 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "includes/libft.h"
 
 int		ft_atoi(const char *str)
 {

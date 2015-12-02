@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "libft.h"
+#include "includes/libft.h"
 
 static size_t	nb_str(char const *s, char c)
 {
