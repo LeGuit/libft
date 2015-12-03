@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/01 18:08:19 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/03 16:41:56 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
 # define ABS(x)		((x > 0) ? (x) : -(x))
 
