@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/12/09 13:03:23 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/12/14 11:57:59 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,7 @@ SRCS =	ft_atoi.c \
 		ft_strclr.c \
 		ft_strcmp.c \
 		ft_strcpy.c \
+		ft_strrcpy.c \
 		ft_strdel.c \
 		ft_strdup.c \
 		ft_strequ.c \
