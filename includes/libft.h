@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/14 11:57:24 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/14 13:08:22 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 # include <fcntl.h>
 
 # define ABS(x)		((x > 0) ? (x) : -(x))
-
+# define MIN(x, y)	((x) > (y) ? (y) : (x))
+# define MAX(x, y)	((x) < (y) ? (y) : (x))
 /*
 ** Fonction Memory libc
 */
