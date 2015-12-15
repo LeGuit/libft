@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/14 13:08:22 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/15 18:20:22 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
+char				*ft_ulltstr_base(unsigned long long n, char *base_strm, char *buf);
 /*
 ** Fonction Print
 */
