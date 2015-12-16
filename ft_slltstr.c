@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:24:10 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/16 11:58:33 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/16 12:01:32 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ char			*ft_slltstr(long long n, char *buf)
 		return (buf);
 	}
 	size = len_str(n);
-	ft_putnbr(size);
 	buf[size + 1] = 0;
 	if (n < 0)
 		buf[0] = '-';
