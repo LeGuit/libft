@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 10:24:10 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/16 11:40:02 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/16 11:58:33 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int		len_str(long long n)
 	return (cnt);
 }
 
-char			*ft_sllstr(long long n, char *buf)
+char			*ft_slltstr(long long n, char *buf)
 {
 	int			size;
 
