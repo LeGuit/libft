@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:23:06 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 15:09:00 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/17 15:51:35 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,7 @@ int				print_u(t_mod *m, va_list ap)
 	arg = get_arg_u(m, ap);
 	process_ptr(m);
 	get_buf(m, arg, buf);
-	if (!m->prec && buf[0] == '0' && m->convers != 'x' && m->convers != 'X'
-		&& m->convers != 'o' && m->convers != 'u')
+	if (GET(m->prec, F_PREC) && buf[0] == '0')
 		buf[0] = 0;
 	cnt = ft_strlen(buf);
 	if (GET(m->flag, F_MINUS))
