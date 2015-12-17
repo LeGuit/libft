@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:45 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 17:44:19 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/17 18:36:49 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 static int		get_arg_c(t_mod *m, va_list ap)
 {
 	if (GET(m->modif, MOD_L))
-		return ((int)(wint_t)va_arg(ap, int));
+		return ((int)va_arg(ap, wint_t));
 	else
 		return ((int)(char)va_arg(ap, int));
 }
