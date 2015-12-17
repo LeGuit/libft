@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/12/16 11:41:28 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/12/17 15:09:27 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 
 CC =	gcc
 FLAGS =	-Wall -Werror -Wextra
-NAME =	libft.a
-HEAD =	-I libft.h
+NAME =	libftprintf.a
+HEAD =	-I includes/
 
 SRCS =	ft_atoi.c \
 		ft_bzero.c \
@@ -82,15 +82,26 @@ SRCS =	ft_atoi.c \
 		ft_putnstr.c \
 		ft_putnstr_fd.c \
 		ft_ulltstr_base.c \
-		ft_slltstr.c
+		ft_slltstr.c \
+		ft_printf.c \
+		get_mod.c \
+		ft_vprintf.c \
+		conversion.c \
+		misc.c \
+		print_arg.c \
+		process_mod.c \
+		print_u.c \
+		print_sign.c \
+		print_str.c \
+		print_c.c
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $@ $^
-	@ranlib $@
+	ar rc $@ $^
+	ranlib $@
 
 %.o: %.c
 	@$(CC) $(FLAGS) $(HEAD) -o $@ -c $<
