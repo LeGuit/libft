@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/12/17 17:31:08 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/12/17 19:25:20 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,8 @@ CC =	gcc
 FLAGS =	-Wall -Werror -Wextra
 NAME =	libftprintf.a
 HEAD =	-I includes/
+TEST = ft_printf
+
 
 SRCS =	ft_atoi.c \
 		ft_bzero.c \
@@ -100,6 +102,11 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
+test: $(TEST)
+
+$(TEST): $(NAME) 
+	$(CC) -o $@ main_test.c $^
+
 $(NAME): $(OBJS)
 	ar rc $@ $^
 	ranlib $@
@@ -114,3 +121,5 @@ fclean: clean
 	@/bin/rm -f $(NAME)
 
 re: fclean all
+
+retest:fclean test
