@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:45 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 18:36:49 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/17 19:05:18 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int				print_c(t_mod *m, va_list ap)
 
 	arg = get_arg_c(m, ap);
 	ft_widetoa(buf, 5, arg);
-	cnt = 1;
+	cnt = (ft_strlen(buf) ? ft_strlen(buf) : 1);
 	if (GET(m->flag, F_MINUS))
 	{
 		ft_putstr(buf);
