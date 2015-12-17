@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 19:13:04 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 13:17:51 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/17 16:10:04 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,9 @@ void		process_flags(t_mod *m)
 		TOGGLE(m->flag, F_SPACE);
 	if (GET(m->flag, F_SPACE) && GET(m->flag, F_PLUS))
 		TOGGLE(m->flag, F_SPACE);
-	if (GET(m->flag, F_PREC) && ft_strchr("dDioOuUixX", m->convers))
-	{
+	if (GET(m->flag, F_PREC) && !m->length
+			&& ft_strchr("dDioOuUixX", m->convers))
 		SET(m->flag, F_ZERO);
-		((m->length) ? (m->length) : (m->length = m->prec));
-	}//case if length & prec with blanks and 0
 }
 
 void		process_modifier(t_mod *m)
