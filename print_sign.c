@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 11:42:51 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 19:27:01 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/18 11:44:00 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int				print_sign(t_mod *m, va_list ap)
 	if (GET(m->prec, F_PREC) && buf[0] == '0')
 		buf[0] = 0;
 	cnt = ft_strlen(buf);
-	if (arg < 0 /*&& GET(m->flag, F_ZERO) && !GET(m->flag, F_PREC)*/)
+	if (arg < 0 && GET(m->flag, F_ZERO) && !GET(m->flag, F_PREC))
 		cnt++;
 	if (GET(m->flag, F_MINUS))
 	{

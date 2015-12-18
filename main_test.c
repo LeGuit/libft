@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/17 19:20:44 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/18 11:43:03 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("Real : %D\n", -1L);
- int j = ft_printf("Mine : %D\n", -1L);
+ int i = printf("Real : %d\n", -42);
+ int j = ft_printf("Mine : %d\n", -42);
 printf("%d\n", i);
 printf("%d\n", j);
   return(0);
