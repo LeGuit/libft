@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 11:42:51 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 11:59:21 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 17:22:52 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void		get_buf(t_mod *m, t_ll arg, char *buf)
 	{
 		ft_putchar('-');
 		if (arg == -923372036854775808)
-			buf = "-923372036854775808";
+			buf = "923372036854775808";
 		else
 			ft_slltstr(ABS(arg), buf);
 	}
