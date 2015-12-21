@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 20:27:44 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 20:31:13 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static size_t	display_zero(t_mod *m, char *buf)
 	int			i;
 
 	i = 0;
-	if (GET(m->flag, F_HO))
+	if (GET(m->flag, F_HO) && *buf != '0')
 		m->prec = ft_strlen(buf) + 1;
 	while (i < (int)(m->prec - ft_strlen(buf)))
 	{
