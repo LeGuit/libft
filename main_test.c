@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/21 17:20:13 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:18:07 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,14 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("Real {% 10.5i}\n", -42);
- int j = ft_printf("Mine {% 10.5i}\n", -42);
+ int i = printf("real {%#o}\n", 42);
+ int j = ft_printf("mine {%#o}\n", 42);
 printf("Real return : %d\n", i);
 printf("My return : %d\n", j);
-  return(0);
+return (0);
   /* Verifiez bien les bornes ! Elles ont tendance a boucler infini ... */
 
+  ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647);
   ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647);
   ft_printf("Les bornes :  %u, %u\n", 0, 4294967295);
   ft_printf("Les bornes :  %o, %o\n", 0, 4294967295);
@@ -86,7 +87,7 @@ printf("My return : %d\n", j);
 
   ft_printf("16chiffre 1 %.6d chiffre 2 %.6d\n", 42, -42);
   printf("16chiffre 1 %.6d chiffre 2 %.6d\n\n", 42, -42);
-
+/*
   ft_putstr(" -----  Memes tests avec les c ------ ");
   ft_putchar('\n');
   ft_putchar('\n');
@@ -105,7 +106,7 @@ printf("My return : %d\n", j);
 
   ft_printf("15caractere 1 %.c caractere 2 %.c\n", 'a', 'c');
   printf("15caractere 1 %.c caractere 2 %.c\n\n", 'a', 'c');
-
+*/
   ft_putstr(" -----  Memes tests avec les o ------ ");
   ft_putchar('\n');
   ft_putchar('\n');
@@ -312,7 +313,7 @@ printf("My return : %d\n", j);
 
   printf("Test de cliffre avec l : %ld, et %ld\n", 32147483647, -32147483647);
   ft_printf("Test de cliffre avec l : %ld, et %ld\n\n", 32147483647, -32147483647);
-
+return (0);
   /* Memes tests avec les %s */
 
   ft_printf("1string 1 %s string 2 %s\n", "toto", "bonjour");

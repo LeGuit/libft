@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 18:23:15 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:12:29 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,17 @@ static size_t	display_prefix(t_mod *m)
 		ft_strcpy(m->prefix, "+");
 	if (GET(m->flag, F_NEG) && ft_strchr("diD", m->convers))
 		ft_strcpy(m->prefix, "-");
+	if (GET(m->flag, F_SPACE) && ft_strchr("diD", m->convers))
+		ft_strcpy(m->prefix, " ");
 	return (ft_strlen(m->prefix));
 }
 
 static size_t	display_zero(t_mod *m, char *buf)
 {
-	size_t		i;
+	int			i;
 
 	i = 0;
-	while (i < (m->prec - ft_strlen(buf)))
+	while (i < (int)(m->prec - ft_strlen(buf)))
 	{
 		ft_putchar('0');
 		i++;
@@ -41,11 +43,16 @@ static size_t	display_zero(t_mod *m, char *buf)
 static size_t	display_space(t_mod *m, char *buf)
 {
 	size_t		i;
+	size_t		nospace;
 
 	i = 0;
-	while ((int)i < (m->length - (int)m->prec - (int)ft_strlen(buf)))
+	nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));
+	while ((int)i < (m->length - (int)nospace))
 	{
-		ft_putchar(' ');
+		if (GET(m->flag, F_ZERO))
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
 		i++;
 	}
 	return (i);
@@ -56,10 +63,13 @@ size_t			display_ui(t_mod *m, char *buf)
 	size_t		cnt;
 
 	cnt = 0;
+	cnt += display_prefix(m);
+	if (GET(m->flag, F_ZERO))
+		ft_putstr(m->prefix);
 	if (!GET(m->flag, F_MINUS))
 		cnt += display_space(m, buf);
-	cnt += display_prefix(m);
-	ft_putstr(m->prefix);
+	if (!GET(m->flag, F_ZERO))
+		ft_putstr(m->prefix);
 	cnt += display_zero(m, buf);
 	ft_putstr(buf);
 	cnt += ft_strlen(buf);

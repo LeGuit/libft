@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 11:42:51 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 17:22:52 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:01:39 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,21 +32,11 @@ static t_ll		get_arg_sign(t_mod *m, va_list ap)
 
 static void		get_buf(t_mod *m, t_ll arg, char *buf)
 {
-	if ((GET(m->flag, F_SPACE) || GET(m->flag, F_PLUS)) && arg > 0)
+	if (arg < 0)
 	{
-		if (GET(m->flag, F_SPACE))
-			buf[0] = ' ';
-		if (GET(m->flag, F_PLUS))
-			buf[0] = '+';
-		ft_slltstr(arg, buf + 1);
-	}
-	else if (arg < 0 && GET(m->flag, F_ZERO))
-	{
-		ft_putchar('-');
-		if (arg == -923372036854775808)
-			buf = "923372036854775808";
-		else
-			ft_slltstr(ABS(arg), buf);
+		ft_slltstr(arg, buf);
+		ft_memmove(buf, buf + 1, ft_strlen(buf));
+		SET(m->flag, F_NEG);
 	}
 	else
 		ft_slltstr(arg, buf);
@@ -59,21 +49,14 @@ int				print_sign(t_mod *m, va_list ap)
 	char		buf[128];
 
 	arg = get_arg_sign(m, ap);
+	if (arg < 0)
+	{
+		UNSET(m->flag, F_SPACE);
+		m->length--;
+	}
+	if (GET(m->flag, F_PLUS))
+		m->length--;
 	get_buf(m, arg, buf);
-	if (GET(m->prec, F_PREC) && buf[0] == '0')
-		buf[0] = 0;
-	cnt = ft_strlen(buf);
-	if (arg < 0 && GET(m->flag, F_ZERO) && !GET(m->flag, F_PREC))
-		cnt++;
-	if (GET(m->flag, F_MINUS))
-	{
-		ft_putstr(buf);
-		cnt += ft_space(m, cnt);
-	}
-	else
-	{
-		cnt += ft_space(m, cnt);
-		ft_putstr(buf);
-	}
+	cnt = display_ui(m, buf);
 	return (cnt);
 }
