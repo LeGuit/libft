@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 20:54:45 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 20:59:45 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static size_t	display_prefix(t_mod *m, char *buf)
 		SET(m->flag, F_HO);
 	if (GET(m->flag, F_SPACE) && GET(m->flag, F_SPACE))
 		m->length--;
-	if (GET(m->flag, F_PREC) && m->prec == 0)
+	if (GET(m->flag, F_PREC) && m->prec == 0 && *buf == '0')
 		*buf = '\0';
 	return (ft_strlen(m->prefix));
 }
