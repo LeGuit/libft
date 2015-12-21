@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 19:12:29 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:52:32 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static size_t	display_prefix(t_mod *m)
+static size_t	display_prefix(t_mod *m, char *buf)
 {
 	if (GET(m->flag, F_HASH) && m->convers == 'x')
 		ft_strcpy(m->prefix, "0x");
@@ -24,6 +24,8 @@ static size_t	display_prefix(t_mod *m)
 		ft_strcpy(m->prefix, "-");
 	if (GET(m->flag, F_SPACE) && ft_strchr("diD", m->convers))
 		ft_strcpy(m->prefix, " ");
+	if (GET(m->flag, F_HASH) && m->convers == 'o' && m->prec <= ft_strlen(buf))
+		SET(m->flag, F_HO);
 	return (ft_strlen(m->prefix));
 }
 
@@ -32,6 +34,8 @@ static size_t	display_zero(t_mod *m, char *buf)
 	int			i;
 
 	i = 0;
+	if (GET(m->flag, F_HO))
+		m->prec = ft_strlen(buf) + 1;
 	while (i < (int)(m->prec - ft_strlen(buf)))
 	{
 		ft_putchar('0');
@@ -46,7 +50,10 @@ static size_t	display_space(t_mod *m, char *buf)
 	size_t		nospace;
 
 	i = 0;
-	nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));
+	if (GET(m->flag, F_HO))
+		nospace = ft_strlen(buf) + 1;
+	else
+		nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));
 	while ((int)i < (m->length - (int)nospace))
 	{
 		if (GET(m->flag, F_ZERO))
@@ -63,7 +70,7 @@ size_t			display_ui(t_mod *m, char *buf)
 	size_t		cnt;
 
 	cnt = 0;
-	cnt += display_prefix(m);
+	cnt += display_prefix(m, buf);
 	if (GET(m->flag, F_ZERO))
 		ft_putstr(m->prefix);
 	if (!GET(m->flag, F_MINUS))

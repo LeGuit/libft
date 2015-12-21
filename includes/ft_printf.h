@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 18:18:11 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:41:28 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # define F_PLUS				(1u << 4)
 # define F_PREC				(1u << 5)
 # define F_NEG				(1u << 6)
+# define F_HO				(1u << 7)
 # define F_ALL				(F_HASH | F_ZERO | F_MINUS | F_SPACE | F_PLUS)
 
 # define MOD_HH				(1u << 0)

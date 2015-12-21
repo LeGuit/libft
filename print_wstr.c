@@ -6,41 +6,12 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 14:31:03 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 19:39:48 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
-/*
-static size_t	ft_wstrlen(const wchar_t *wstr)
-{
-	size_t		cnt;
 
-	cnt = 0;
-	if (wstr == NULL)
-		return (0);
-	while (wstr[cnt])
-		cnt++;
-	return (cnt);
-}
-
-static size_t	apply_prec(t_mod *m, wchar_t *arg)
-{
-	size_t		i;
-
-	i = ft_wstrlen(arg);
-	if (GET(m->flag, F_PREC))
-	{
-		if (m->prec)
-		{
-			i = MIN(i, m->prec);
-		}
-		else
-			i = 0;
-	}
-	return (i);
-}
-*/
 static int		null_case(wchar_t *arg)
 {
 	if (!arg)
