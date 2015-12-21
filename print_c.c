@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:45 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 12:11:39 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 14:59:10 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int		get_arg_c(t_mod *m, va_list ap)
 	if (GET(m->modif, MOD_L))
 		return ((int)va_arg(ap, wint_t));
 	else
-		return ((int)(char)va_arg(ap, int));
+		return (va_arg(ap, int));
 }
 
 int				print_c(t_mod *m, va_list ap)
@@ -28,6 +28,11 @@ int				print_c(t_mod *m, va_list ap)
 	char		buf[5];
 
 	arg = get_arg_c(m, ap);
+	if (!GET(m->modif, MOD_L) && arg > 127)
+	{
+		ft_putchar(arg);
+		return (1);
+	}
 	ft_widetoa(buf, 5, arg);
 	cnt = (ft_strlen(buf) ? ft_strlen(buf) : 1);
 	if (GET(m->flag, F_MINUS))
@@ -40,5 +45,7 @@ int				print_c(t_mod *m, va_list ap)
 		cnt += ft_space(m, cnt);
 		ft_putstr(buf);
 	}
+	if (!*buf)
+		ft_putchar('\0');
 	return (cnt);
 }

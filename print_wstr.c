@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str.c                                        :+:      :+:    :+:   */
+/*   print_wstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 14:11:19 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/12/21 14:31:03 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+/*
+static size_t	ft_wstrlen(const wchar_t *wstr)
+{
+	size_t		cnt;
 
-static size_t	apply_prec(t_mod *m, char *arg)
+	cnt = 0;
+	if (wstr == NULL)
+		return (0);
+	while (wstr[cnt])
+		cnt++;
+	return (cnt);
+}
+
+static size_t	apply_prec(t_mod *m, wchar_t *arg)
 {
 	size_t		i;
 
-	i = ft_strlen(arg);
+	i = ft_wstrlen(arg);
 	if (GET(m->flag, F_PREC))
 	{
 		if (m->prec)
@@ -28,8 +40,8 @@ static size_t	apply_prec(t_mod *m, char *arg)
 	}
 	return (i);
 }
-
-static int		null_case(char *arg)
+*/
+static int		null_case(wchar_t *arg)
 {
 	if (!arg)
 	{
@@ -39,28 +51,25 @@ static int		null_case(char *arg)
 	return (0);
 }
 
-int				print_str(t_mod *m, va_list ap)
+int				print_wstr(t_mod *m, va_list ap)
 {
-	size_t		cnt;
-	char		*arg;
+	char		buf[5];
 	size_t		i;
+	wchar_t		*arg;
+	size_t		size;
 
-	arg = va_arg(ap, char *);
+	i = 0;
+	(void)m;
+	arg = va_arg(ap, wchar_t *);
 	if (null_case(arg))
 		return (6);
-	cnt = apply_prec(m, arg);
-	i = 0;
-	if (GET(m->flag, F_MINUS))
+	size = 0;
+	while (*arg)
 	{
-		while (i < cnt)
-			ft_putchar(arg[i++]);
-		cnt += ft_space(m, cnt);
+		ft_widetoa(buf, 5, (int)(*arg));
+		size += ft_strlen(buf);
+		ft_putstr(buf);
+		arg++;
 	}
-	else
-	{
-		cnt += ft_space(m, cnt);
-		while (i < cnt)
-			ft_putchar(arg[i++]);
-	}
-	return (cnt);
+	return (size);
 }

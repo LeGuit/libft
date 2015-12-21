@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2015/12/17 19:25:20 by gwoodwar         ###   ########.fr        #
+#    Updated: 2015/12/21 14:24:42 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,7 +96,8 @@ SRCS =	ft_atoi.c \
 		print_u.c \
 		print_sign.c \
 		print_str.c \
-		print_c.c
+		print_c.c \
+		print_wstr.c
 
 OBJS = $(SRCS:.c=.o)
 
