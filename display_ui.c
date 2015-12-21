@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 21:37:09 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 21:47:55 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static size_t	display_prefix(t_mod *m, char *buf)
 		ft_strcpy(m->prefix, "0x");
 	if (GET(m->flag, F_HASH) && m->convers == 'X')
 		ft_strcpy(m->prefix, "0X");
-	if (GET(m->flag, F_HASH) && ft_strchr("xX", m->convers))
+	if (GET(m->flag, F_HASH) && ft_strchr("xX", m->convers) && m->length)
 		m->length = ((m->length < 2) ? 2 : m->length - 2);
 	if (GET(m->flag, F_PTR) && GET(m->flag, F_PREC) && m->prec == 0)
 		m->length = 0;
