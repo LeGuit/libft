@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:23:06 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 15:51:35 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 18:24:48 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,8 @@ static t_ull	get_arg_u(t_mod *m, va_list ap)
 		return ((t_ull)va_arg(ap, unsigned int));
 }
 
-static int		hash_case(t_mod *m, t_ull arg, char *buf)
-{
-	if (!GET(m->flag, F_HASH) || !ft_strchr("oxX", m->convers))
-		return (0);
-	buf[0] = '0';
-	if (m->convers == 'x')
-	{
-		buf[1] = 'x';
-		ft_ulltstr_base(arg, "0123456789abcdef", buf + 2);
-	}
-	if (m->convers == 'X')
-	{
-		buf[1] = 'X';
-		ft_ulltstr_base(arg, "0123456789ABCDEF", buf + 2);
-	}
-	if (m->convers == 'o')
-		ft_ulltstr_base(arg, "01234567", buf + 1);
-	return (1);
-}
-
 static void		get_buf(t_mod *m, t_ull arg, char *buf)
 {
-	if (hash_case(m, arg, buf))
-			return ;
 	if (m->convers == 'o')
 		ft_ulltstr_base(arg, "01234567", buf);
 	if (m->convers == 'x')
@@ -75,18 +53,6 @@ int				print_u(t_mod *m, va_list ap)
 	arg = get_arg_u(m, ap);
 	process_ptr(m);
 	get_buf(m, arg, buf);
-	if (GET(m->prec, F_PREC) && buf[0] == '0')
-		buf[0] = 0;
-	cnt = ft_strlen(buf);
-	if (GET(m->flag, F_MINUS))
-	{
-		ft_putstr(buf);
-		cnt += ft_space(m, cnt);
-	}
-	else
-	{
-		cnt += ft_space(m, cnt);
-		ft_putstr(buf);
-	}
+	cnt = display_ui(m, buf);
 	return (cnt);
 }

@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 18:12:58 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 18:23:15 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,15 @@ static size_t	display_zero(t_mod *m, char *buf)
 		ft_putchar('0');
 		i++;
 	}
-	m->length -= i;
 	return (i);
 }
 
-static size_t	display_space(t_mod *m)
+static size_t	display_space(t_mod *m, char *buf)
 {
 	size_t		i;
 
 	i = 0;
-	while (i < (m->length))
+	while ((int)i < (m->length - (int)m->prec - (int)ft_strlen(buf)))
 	{
 		ft_putchar(' ');
 		i++;
@@ -52,20 +51,20 @@ static size_t	display_space(t_mod *m)
 	return (i);
 }
 
-size_t			ft_display(t_mod *m, char *buf)
+size_t			display_ui(t_mod *m, char *buf)
 {
 	size_t		cnt;
 
 	cnt = 0;
 	if (!GET(m->flag, F_MINUS))
-		cnt += display_space(m);
+		cnt += display_space(m, buf);
 	cnt += display_prefix(m);
 	ft_putstr(m->prefix);
-	cnt += display_zero();
+	cnt += display_zero(m, buf);
 	ft_putstr(buf);
 	cnt += ft_strlen(buf);
 	if (GET(m->flag, F_MINUS))
-		cnt += display_space(m);
+		cnt += display_space(m, buf);
 	return (cnt);
 }
 
