@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/18 12:02:00 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 10:56:36 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,25 @@ static size_t	apply_prec(t_mod *m, char *arg)
 	return (i);
 }
 
+static int		null_case(char *arg)
+{
+	if (!arg)
+	{
+		ft_putstr("(null)");
+		return (1);
+	}
+	return (0);
+}
+
 int				print_str(t_mod *m, va_list ap)
 {
 	size_t		cnt;
 	char		*arg;
 	size_t		i;
 
-	if (!(arg = get_arg_str(m, ap)))
-	{
-		ft_putstr("(null)");
+	arg = get_arg_str(m, ap);
+	if (null_case(arg))
 		return (6);
-	}
 	cnt = apply_prec(m, arg);
 	i = 0;
 	if (GET(m->flag, F_MINUS))
