@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 20:12:43 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 10:47:00 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 16:24:19 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int				ft_vprintf(const char *format, va_list ap)
 				ret += print_arg(&m, ap);
 				continue ;
 			}
+			if (!m.convers)
+				ret += ft_space(&m, 1); 
 		}
 		ft_putchar(format[i]);
 		ret++;

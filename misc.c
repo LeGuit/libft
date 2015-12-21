@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/15 16:55:02 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/17 12:53:57 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 15:30:41 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ size_t			ft_space(t_mod *m, size_t size)
 	return (cnt);
 }
 
-int		print_modulo(t_mod *m, va_list ap)
+int				print_modulo(t_mod *m, va_list ap)
 {
 	(void)ap;
 	(void)m;
