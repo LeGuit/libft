@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 10:56:36 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:20:35 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,16 @@ static int		null_case(char *arg)
 		return (1);
 	}
 	return (0);
+}
+
+static int		print_wide(char *arg, size_t size)
+{
+	char		buf[5];
+
+	while (size)
+	{
+		ft_widetoa(buf, 5, int(
+	}
 }
 
 int				print_str(t_mod *m, va_list ap)
