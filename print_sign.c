@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 11:42:51 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/18 11:44:00 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:59:21 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_ll		get_arg_sign(t_mod *m, va_list ap)
 	if (GET(m->modif, MOD_J))
 		return ((t_ll)va_arg(ap, intmax_t));
 	if (GET(m->modif, MOD_Z))
-		return ((t_ll)va_arg(ap, int));
+		return ((t_ll)va_arg(ap, size_t));
 	else
 		return ((t_ll)va_arg(ap, int));
 }
@@ -43,8 +43,8 @@ static void		get_buf(t_mod *m, t_ll arg, char *buf)
 	else if (arg < 0 && GET(m->flag, F_ZERO))
 	{
 		ft_putchar('-');
-		if (arg == -2147483648)
-			buf = "2147483648";
+		if (arg == -923372036854775808)
+			buf = "-923372036854775808";
 		else
 			ft_slltstr(ABS(arg), buf);
 	}

@@ -6,13 +6,14 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/18 11:45:34 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 12:13:17 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 #include <stdio.h>
 #include <locale.h>
+#define LLONG_MAX	9223372036854775807LL
 int		main()
 {
   char		c;
@@ -36,10 +37,10 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("Real : %S\n", L"米");
- int j = ft_printf("Mine : %S\n", L"米");
-printf("%d\n", i);
-printf("%d\n", j);
+ int i = printf("Real {% c}\n", 0);
+ int j = ft_printf("Mine {% c}\n", 0);
+printf("Real return : %d\n", i);
+printf("My return : %d\n", j);
   return(0);
   /* Verifiez bien les bornes ! Elles ont tendance a boucler infini ... */
 

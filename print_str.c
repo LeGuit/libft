@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 11:20:35 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 11:44:28 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,22 @@ static int		null_case(char *arg)
 	}
 	return (0);
 }
-
-static int		print_wide(char *arg, size_t size)
+/*
+static void		print_wide(char *arg, size_t size)
 {
 	char		buf[5];
+	int			i;
 
+	i = 0;
 	while (size)
 	{
-		ft_widetoa(buf, 5, int(
+		ft_widetoa(buf, 5, (int)(*arg));
+		ft_putstr(buf);
+		size--;
+		arg++;
 	}
 }
-
+*/
 int				print_str(t_mod *m, va_list ap)
 {
 	size_t		cnt;
@@ -66,6 +71,10 @@ int				print_str(t_mod *m, va_list ap)
 	arg = get_arg_str(m, ap);
 	if (null_case(arg))
 		return (6);
+/*	if (m->modif == 'l')
+	{	print_wide(arg, ft_strlen(arg) * sizeof(wchar_t));
+		return (ft_strlen(arg));
+	}*/
 	cnt = apply_prec(m, arg);
 	i = 0;
 	if (GET(m->flag, F_MINUS))
