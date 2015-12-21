@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 20:12:43 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/15 19:00:27 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 10:47:00 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,15 @@ int				ft_vprintf(const char *format, va_list ap)
 	{
 		if (format[i] == '%')
 		{
+			if (!format[i + 1])
+				return (0);
 			ft_bzero(&m, sizeof(t_mod));
 			i += get_mod(&format[i + 1], &m, ap) + 1;
-			ret += print_arg(&m, ap);
-			continue ;
+			if (m.convers)
+			{
+				ret += print_arg(&m, ap);
+				continue ;
+			}
 		}
 		ft_putchar(format[i]);
 		ret++;
