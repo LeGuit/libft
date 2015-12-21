@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 19:13:04 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 14:10:09 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 20:39:44 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void		process_ptr(t_mod *m)
 	if (m->convers == 'p')
 	{
 		SET(m->flag, F_HASH);
+		SET(m->flag, F_PTR);
 		m->convers = 'x';
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/21 19:49:02 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/21 20:53:22 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,8 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("real {%5p}\n", 0);
- int j = ft_printf("mine {%5p}\n", 0);
- i = printf("real {%#o}\n", 0);
- j = ft_printf("mine {%#o}\n", 0);
+ int i = printf("real {%.d, %.0d}\n", 0, 0);
+ int j = ft_printf("mine {%.0d, %.d}\n", 0, 0);
 printf("Real return : %d\n", i);
 printf("My return : %d\n", j);
 return (0);
