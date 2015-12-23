@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 20:12:43 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 16:28:35 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 17:17:52 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@ static int		display_noc(t_mod *m, char cursor)
 	{
 		while (i < m->length)
 		{
-			ft_putchar(' ');
+			if (GET(m->flag, F_ZERO))
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
 			i++;
 		}
 	}
