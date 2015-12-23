@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 18:43:54 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 14:24:16 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:32:56 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ int					print_arg(t_mod *m, va_list ap)
 
 	process_flags(m);
 	process_modifier(m);
-//	print_struct(m);//get the va at the conv fct
 	cnt = g_convtab[(int)m->convers](m, ap);
 	return (cnt);
 }

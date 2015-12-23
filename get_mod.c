@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 16:36:07 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/16 17:45:57 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:33:51 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static int		get_prec(const char *cursor, t_mod *m, va_list ap)
 static int		get_modif(const char *cursor, t_mod *m)
 {
 	int			i;
-//cheack about false modif
+
 	i = 0;
 	while (cursor[i] == 'h' || cursor[i] == 'l' || cursor[i] == 'j'
 			|| cursor[i] == 'z')
@@ -107,7 +107,6 @@ int				get_mod(const char *cursor, t_mod *m, va_list ap)
 	cnt += get_flag(cursor, m);
 	cnt += get_length(cursor + cnt, m, ap);
 	cnt += get_prec(cursor + cnt, m, ap);
-/*no prec of more than 1 prec -> no prec*///maybe not
 	if (*(cursor + cnt) == '.')
 	{
 		m->prec = 0;
@@ -116,7 +115,7 @@ int				get_mod(const char *cursor, t_mod *m, va_list ap)
 			cnt++;
 	}
 	cnt += get_modif(cursor + cnt, m);
-	if (!(cnt += get_convers(*(cursor + cnt), m)))//if no valid conversion
-		return (0);//return something special for invalid but keep counting
+	if (!(cnt += get_convers(*(cursor + cnt), m)))
+		return (0);
 	return (cnt);
 }

@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 13:51:55 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:32:31 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static size_t	display_space_w(t_mod *m,  size_t size)
+static size_t	display_space_w(t_mod *m, size_t size)
 {
 	size_t		i;
 	size_t		nospace;
