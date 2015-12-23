@@ -6,11 +6,51 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 20:12:43 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 17:38:23 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:28:35 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
+
+static int		display_noc(t_mod *m, char cursor)
+{
+	int			i;
+
+	i = 1;
+	if (!GET(m->flag, F_MINUS))
+	{
+		while (i < m->length)
+		{
+			ft_putchar(' ');
+			i++;
+		}
+	}
+	ft_putchar(cursor);
+	if (GET(m->flag, F_MINUS))
+	{
+		while (i < m->length)
+		{
+			ft_putchar(' ');
+			i++;
+		}
+	}
+	return (i);
+}
+
+static int		output(t_mod *m, va_list ap, const char format)
+{
+	int			i;
+
+	i = 0;
+	if (m->convers)
+		i += print_arg(m, ap);
+	else
+	{
+		SET(m->flag, F_NCONV);
+		i += (display_noc(m, format));
+	}
+	return (i);
+}
 
 int				ft_vprintf(const char *format, va_list ap)
 {
@@ -28,11 +68,10 @@ int				ft_vprintf(const char *format, va_list ap)
 				return (0);
 			ft_bzero(&m, sizeof(t_mod));
 			i += get_mod(&format[i + 1], &m, ap) + 1;
-			if (m.convers)
-			{
-				ret += print_arg(&m, ap);
-				continue ;
-			}
+			ret += output(&m, ap, format[i]);
+			if (GET(m.flag, F_NCONV))
+				i++;
+			continue;
 		}
 		ft_putchar(format[i]);
 		ret++;

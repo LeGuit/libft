@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 13:46:16 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:26:53 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@
 # define F_NEG				(1u << 6)
 # define F_HO				(1u << 7)
 # define F_PTR				(1u << 8)
-# define F_ALL				((1u << 9) - 1)
+# define F_NCONV			(1u << 9)
+# define F_ALL				((1u << 10) - 1)
 
 # define MOD_HH				(1u << 0)
 # define MOD_H				(1u << 1)
