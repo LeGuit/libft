@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 11:40:17 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:46:10 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static size_t	display_prefix(t_mod *m, char *buf)
 {
 	if (GET(m->flag, F_PTR) || (ft_strchr("xX", m->convers) && *buf != '0'))
 	{
-	if (GET(m->flag, F_HASH) && m->convers == 'x')
-		ft_strcpy(m->prefix, "0x");
-	if (GET(m->flag, F_HASH) && m->convers == 'X')
-		ft_strcpy(m->prefix, "0X");
-	if (GET(m->flag, F_HASH) && ft_strchr("xX", m->convers) && m->length)
-		m->length = ((m->length < 2) ? 2 : m->length - 2);
-	if (GET(m->flag, F_PTR) && GET(m->flag, F_PREC) && m->prec == 0)
-		m->length = 0;
+		if (GET(m->flag, F_HASH) && m->convers == 'x')
+			ft_strcpy(m->prefix, "0x");
+		if (GET(m->flag, F_HASH) && m->convers == 'X')
+			ft_strcpy(m->prefix, "0X");
+		if (GET(m->flag, F_HASH) && ft_strchr("xX", m->convers) && m->length)
+			m->length = ((m->length < 2) ? 2 : m->length - 2);
+		if (GET(m->flag, F_PTR) && GET(m->flag, F_PREC) && m->prec == 0)
+			m->length = 0;
 	}
 	if (GET(m->flag, F_PLUS) && ft_strchr("diD", m->convers))
 		ft_strcpy(m->prefix, "+");
@@ -55,7 +55,7 @@ static size_t	display_zero(t_mod *m, char *buf)
 	return (i);
 }
 
-size_t	display_space(t_mod *m, char *buf)
+size_t			display_space(t_mod *m, char *buf)
 {
 	size_t		i;
 	size_t		nospace;
@@ -63,7 +63,7 @@ size_t	display_space(t_mod *m, char *buf)
 	i = 0;
 	if (GET(m->flag, F_HO))
 		nospace = ft_strlen(buf) + 1;
-	if (ft_strchr("sS", m->convers))
+	if (ft_strchr("sS", m->convers) && GET(m->flag, F_PREC))
 		nospace = (m->prec < ft_strlen(buf) ? m->prec : ft_strlen(buf));
 	else
 		nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));

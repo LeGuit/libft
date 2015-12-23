@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/23 11:05:42 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:44:41 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("real {%S}\n", L"Α α");
- int j = ft_printf("mine {%S}\n", L"Α α");
+ int i = printf("real {%05s}\n", "abc");
+ int j = ft_printf("mine {%05s}\n", "abc");
 printf("Real return : %d\n", i);
 printf("My return : %d\n", j);
 return (0);

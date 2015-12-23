@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 11:10:29 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:43:25 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,13 @@ size_t			display_wstr(t_mod *m, wchar_t *buf)
 
 	i = 0;
 	sizew = 0;
-	cnt = 0;
 	while (buf[i])
 	{
 		ft_widetoa(tmp, 5, (int)(buf[i]));
 		sizew += ft_strlen(tmp);
 		i++;
 	}
-	cnt += sizew;
+	cnt = sizew;
 	if (!GET(m->flag, F_MINUS))
 		cnt += display_space_w(m, sizew);
 	while (*buf)
