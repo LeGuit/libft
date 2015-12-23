@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/23 16:13:29 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 17:11:21 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,10 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("real {%10R}\n");
- int j = ft_printf("mine {%10R}\n");
- i = printf("real {%-15Z}\n", 123);
- j = ft_printf("mine {%-15Z}\n", 123);
- i = printf("real {% Zoo}\n", 123);
- j = ft_printf("mine {% Zoo}\n", 123);
+ int i = printf("real {%-05.s}\n", 0);
+ int j = ft_printf("mine {%-05.s}\n", 0);
+ i = printf("real {%5.%}\n", 0);
+ j = ft_printf("mine {%5.%}\n", 0);
 printf("Real return : %d\n", i);
 printf("My return : %d\n", j);
 return (0);

@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 15:06:49 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 17:05:09 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,20 @@ int				print_str(t_mod *m, va_list ap)
 	char		*arg;
 
 	arg = va_arg(ap, char *);
-	if (null_case(arg))
+	if (!arg && GET(m->flag, F_PREC))
+	{
+		cnt = 0;
+		while ((int)cnt < m->length)
+		{
+			if (GET(m->flag, F_ZERO))
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+			cnt++;
+		}
+		return (cnt);
+	}
+	else if (null_case(arg))
 		return (6);
 	cnt = display_str(m, arg);
 	return (cnt);

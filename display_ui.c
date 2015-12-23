@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 15:21:30 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 17:15:02 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,8 +102,24 @@ size_t			display_ui(t_mod *m, char *buf)
 
 int				print_modulo(t_mod *m, va_list ap)
 {
+	size_t		cnt;
+
 	(void)ap;
-	(void)m;
-	ft_putchar('%');
-	return (1);
+	cnt = 1;
+	if (GET(m->flag, F_MINUS))
+		ft_putchar('%');
+	if (GET(m->flag, F_PREC))
+	{
+		while ((int)cnt < m->length)
+		{
+			if (GET(m->flag, F_ZERO))
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+			cnt++;
+		}
+	}
+	if (!GET(m->flag, F_MINUS))
+		ft_putchar('%');
+	return (cnt);
 }
