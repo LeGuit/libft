@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 20:38:05 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 10:15:38 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,7 @@ int							print_sign(t_mod *m, va_list ap);
 int							print_str(t_mod *m, va_list ap);
 int							print_c(t_mod *m, va_list ap);
 int							print_wstr(t_mod *m, va_list ap);
+size_t						display_space(t_mod *m, char *buf);
 
 size_t						display_ui(t_mod *m, char *buf);
 

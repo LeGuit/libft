@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 21:47:55 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 10:15:52 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static size_t	display_zero(t_mod *m, char *buf)
 	return (i);
 }
 
-static size_t	display_space(t_mod *m, char *buf)
+size_t	display_space(t_mod *m, char *buf)
 {
 	size_t		i;
 	size_t		nospace;

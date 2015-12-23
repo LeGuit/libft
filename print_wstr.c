@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 19:39:48 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:10:29 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,60 @@ static int		null_case(wchar_t *arg)
 	return (0);
 }
 
+size_t			display_space_w(t_mod *m,  size_t size)
+{
+	size_t		i;
+	size_t		nospace;
+
+	i = 0;
+	if (GET(m->flag, F_HO))
+		nospace = size + 1;
+	else
+		nospace = ((m->prec) ? MAX(m->prec, size)
+					: size);
+	while ((int)i < (m->length - (int)nospace))
+	{
+		if (GET(m->flag, F_ZERO))
+			ft_putchar('0');
+		else
+			ft_putchar(' ');
+		i++;
+	}
+	return (i);
+}
+
+size_t			display_wstr(t_mod *m, wchar_t *buf)
+{
+	size_t		cnt;
+	char		tmp[5];
+	int			i;
+	size_t		sizew;
+
+	i = 0;
+	sizew = 0;
+	cnt = 0;
+	while (buf[i])
+	{
+		ft_widetoa(tmp, 5, (int)(buf[i]));
+		sizew += ft_strlen(tmp);
+		i++;
+	}
+	cnt += sizew;
+	if (!GET(m->flag, F_MINUS))
+		cnt += display_space_w(m, sizew);
+	while (*buf)
+	{
+		ft_widetoa(tmp, 5, (int)(*buf));
+		ft_putstr(tmp);
+		buf++;
+	}
+	if (GET(m->flag, F_MINUS))
+		cnt += display_space_w(m, sizew);
+	return (cnt);
+}
+
 int				print_wstr(t_mod *m, va_list ap)
 {
-	char		buf[5];
 	size_t		i;
 	wchar_t		*arg;
 	size_t		size;
@@ -34,13 +85,13 @@ int				print_wstr(t_mod *m, va_list ap)
 	arg = va_arg(ap, wchar_t *);
 	if (null_case(arg))
 		return (6);
-	size = 0;
-	while (*arg)
+	size = display_wstr(m, arg);
+/*	while (*arg)
 	{
 		ft_widetoa(buf, 5, (int)(*arg));
 		size += ft_strlen(buf);
 		ft_putstr(buf);
 		arg++;
-	}
+	}*/
 	return (size);
 }
