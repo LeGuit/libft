@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 10:19:52 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:34:46 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,17 @@ size_t			display_str(t_mod *m, char *buf)
 	if (!GET(m->flag, F_MINUS))
 		cnt += display_space(m, buf);
 	i = 0;
-	while (buf[i])
-		ft_putchar(buf[i++]);
-	cnt += ft_strlen(buf);
+	if (GET(m->flag, F_PREC) && m->prec < ft_strlen(buf))
+	{
+		while (i < (int)m->prec)
+			ft_putchar(buf[i++]);
+	}
+	else
+	{
+		while (buf[i])
+			ft_putchar(buf[i++]);
+	}
+	cnt += i;
 	if (GET(m->flag, F_MINUS))
 		cnt += display_space(m, buf);
 	return (cnt);
