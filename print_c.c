@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:45 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/21 14:59:10 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 15:17:56 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,31 +21,35 @@ static int		get_arg_c(t_mod *m, va_list ap)
 		return (va_arg(ap, int));
 }
 
+size_t			display_c(t_mod *m, int arg)
+{
+	size_t		cnt;
+	char		buf[5];
+
+	cnt = 0;
+	ft_widetoa(buf, 5, arg);
+	if (!GET(m->flag, F_MINUS))
+		cnt += display_space(m, buf);
+	if (!GET(m->modif, MOD_L) && arg > 127)
+	{
+		ft_putchar(arg);
+		cnt += 1;
+	}
+	cnt += (ft_strlen(buf) ? ft_strlen(buf) : 1);
+	ft_putstr(buf);
+	if (!*buf)
+		ft_putchar('\0');
+	if (GET(m->flag, F_MINUS))
+		cnt += display_space(m, buf);
+	return (cnt);
+}
+
 int				print_c(t_mod *m, va_list ap)
 {
 	size_t		cnt;
 	int			arg;
-	char		buf[5];
 
 	arg = get_arg_c(m, ap);
-	if (!GET(m->modif, MOD_L) && arg > 127)
-	{
-		ft_putchar(arg);
-		return (1);
-	}
-	ft_widetoa(buf, 5, arg);
-	cnt = (ft_strlen(buf) ? ft_strlen(buf) : 1);
-	if (GET(m->flag, F_MINUS))
-	{
-		ft_putstr(buf);
-		cnt += ft_space(m, cnt);
-	}
-	else
-	{
-		cnt += ft_space(m, cnt);
-		ft_putstr(buf);
-	}
-	if (!*buf)
-		ft_putchar('\0');
+	cnt = display_c(m, arg);
 	return (cnt);
 }

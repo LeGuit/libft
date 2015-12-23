@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/23 13:48:31 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 15:12:40 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("real {%.15S}\n", L"我是一只猫。");
- int j = ft_printf("mine {%.15S}\n", L"我是一只猫。");
+ int i = printf("real {%3c}\n", 0);
+ int j = ft_printf("mine {%3c}\n", 0);
 printf("Real return : %d\n", i);
 printf("My return : %d\n", j);
 return (0);

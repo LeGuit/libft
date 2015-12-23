@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 13:45:54 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 15:06:49 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int				null_case(char *arg)
 	return (0);
 }
 
-size_t			display_str(t_mod *m, char *buf)
+static size_t	display_str(t_mod *m, char *buf)
 {
 	size_t		cnt;
 	int			i;
