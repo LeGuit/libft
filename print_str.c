@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 15:27:58 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 11:34:46 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 13:45:54 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static int		null_case(char *arg)
+int				null_case(char *arg)
 {
 	if (!arg)
 	{

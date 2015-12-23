@@ -6,33 +6,19 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 11:43:25 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 13:51:55 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static int		null_case(wchar_t *arg)
-{
-	if (!arg)
-	{
-		ft_putstr("(null)");
-		return (1);
-	}
-	return (0);
-}
-
-size_t			display_space_w(t_mod *m,  size_t size)
+static size_t	display_space_w(t_mod *m,  size_t size)
 {
 	size_t		i;
 	size_t		nospace;
 
 	i = 0;
-	if (GET(m->flag, F_HO))
-		nospace = size + 1;
-	else
-		nospace = ((m->prec) ? MAX(m->prec, size)
-					: size);
+	nospace = size;
 	while ((int)i < (m->length - (int)nospace))
 	{
 		if (GET(m->flag, F_ZERO))
@@ -44,32 +30,56 @@ size_t			display_space_w(t_mod *m,  size_t size)
 	return (i);
 }
 
+static size_t	sizew_to_print(t_mod *m, wchar_t *buf)
+{
+	int			i;
+	size_t		sizew;
+	char		tmp[5];
+
+	i = 0;
+	sizew = 0;
+	while (buf[i] && (int)(m->prec ? m->prec : 1) > 0)
+	{
+		ft_widetoa(tmp, 5, (int)(buf[i]));
+		sizew += ft_strlen(tmp);
+		if (GET(m->flag, F_PREC))
+			m->prec -= 5;
+		i++;
+	}
+	return (sizew);
+}
+
 size_t			display_wstr(t_mod *m, wchar_t *buf)
 {
 	size_t		cnt;
 	char		tmp[5];
-	int			i;
 	size_t		sizew;
 
-	i = 0;
-	sizew = 0;
-	while (buf[i])
-	{
-		ft_widetoa(tmp, 5, (int)(buf[i]));
-		sizew += ft_strlen(tmp);
-		i++;
-	}
-	cnt = sizew;
+	cnt = sizew_to_print(m, buf);
+	sizew = cnt;
 	if (!GET(m->flag, F_MINUS))
-		cnt += display_space_w(m, sizew);
-	while (*buf)
+		cnt += display_space_w(m, cnt);
+	if (GET(m->flag, F_PREC))
 	{
-		ft_widetoa(tmp, 5, (int)(*buf));
-		ft_putstr(tmp);
-		buf++;
+		while ((int)sizew > 0)
+		{
+			ft_widetoa(tmp, 5, (int)(*buf));
+			ft_putstr(tmp);
+			buf++;
+			sizew -= 4;
+		}
+	}
+	else
+	{
+		while (*buf)
+		{
+			ft_widetoa(tmp, 5, (int)(*buf));
+			ft_putstr(tmp);
+			buf++;
+		}
 	}
 	if (GET(m->flag, F_MINUS))
-		cnt += display_space_w(m, sizew);
+		cnt += display_space_w(m, cnt);
 	return (cnt);
 }
 
@@ -80,17 +90,9 @@ int				print_wstr(t_mod *m, va_list ap)
 	size_t		size;
 
 	i = 0;
-	(void)m;
 	arg = va_arg(ap, wchar_t *);
-	if (null_case(arg))
+	if (null_case((char *)arg))
 		return (6);
 	size = display_wstr(m, arg);
-/*	while (*arg)
-	{
-		ft_widetoa(buf, 5, (int)(*arg));
-		size += ft_strlen(buf);
-		ft_putstr(buf);
-		arg++;
-	}*/
 	return (size);
 }
