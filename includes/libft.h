@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/16 12:51:52 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/23 10:39:48 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define ABS(x)		((x > 0) ? (x) : -(x))
 # define MIN(x, y)	((x) > (y) ? (y) : (x))
 # define MAX(x, y)	((x) < (y) ? (y) : (x))
+
 /*
 ** Fonction Memory libc
 */
@@ -42,6 +43,7 @@ void				ft_memdel(void **ap);
 */
 size_t				ft_strlen(const char *s);
 size_t				ft_strlen_ch(char const *s, char c);
+size_t				ft_wstrlen(wchar_t *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t n);
@@ -87,7 +89,8 @@ int					ft_toupper(int c);
 int					ft_tolower(int c);
 int					ft_atoi(const char *str);
 char				*ft_itoa(int n);
-void				ft_ulltstr_base(unsigned long long n, char *base_strm, char *buf);
+void				ft_ulltstr_base(unsigned long long n, char *base_strm,
+									char *buf);
 void				ft_slltstr(long long n, char *buf);
 /*
 ** Fonction Print
