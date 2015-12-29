@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 16:36:07 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/29 13:23:12 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/29 13:35:22 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ static int		get_prec(const char *cursor, t_mod *m, va_list ap)
 	if (cursor[i] == '*')
 	{
 		m->prec = va_arg(ap, int);
+		if ((int)m->prec < 0 && ft_strchr("diuUoO", cursor[i + 1]))
+			m->prec = 0;
 		i++;
 	}
 	return (i);
