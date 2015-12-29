@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 17:15:02 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/29 13:21:24 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ size_t			display_space(t_mod *m, char *buf)
 	size_t		nospace;
 
 	i = 0;
-	if (GET(m->flag, F_HO))
-		nospace = ft_strlen(buf) + 1;
 	if (ft_strchr("sS", m->convers) && GET(m->flag, F_PREC))
 		nospace = (m->prec < ft_strlen(buf) ? m->prec : ft_strlen(buf));
 	else
 		nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));
 	if (ft_strchr("c", m->convers) && !*buf)
 		nospace = 1;
+	if (GET(m->flag, F_HO))
+		nospace = ft_strlen(buf) + 1;
 	while ((int)i < (m->length - (int)nospace))
 	{
 		if (GET(m->flag, F_ZERO))

@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 16:36:07 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 16:33:51 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/29 13:23:12 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ static int		get_length(const char *cursor, t_mod *m, va_list ap)
 	else if (cursor[i] == '*')
 	{
 		m->length = va_arg(ap, int);
+		if (m->length < 0)
+		{
+			m->length = -(m->length);
+			SET(m->flag, F_MINUS);
+		}
 		i++;
 	}
 	return (i);

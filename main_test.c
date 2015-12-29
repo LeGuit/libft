@@ -6,7 +6,7 @@
 /*   By: hbeaujou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 15:28:04 by hbeaujou          #+#    #+#             */
-/*   Updated: 2015/12/23 17:11:21 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2015/12/29 13:17:26 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <stdio.h>
 #include <locale.h>
 #define LLONG_MAX	9223372036854775807LL
+#define aprintf(s, ...) printf(": real [%d]\n", printf(s, __VA_ARGS__)); printf(": mine [%d]\n", ft_printf(s, __VA_ARGS__)); 
+
 int		main()
 {
   char		c;
@@ -37,13 +39,15 @@ int		main()
 
 	printf(" ------------------------------------------------------------- \n");
 
- int i = printf("real {%-05.s}\n", 0);
- int j = ft_printf("mine {%-05.s}\n", 0);
- i = printf("real {%5.%}\n", 0);
- j = ft_printf("mine {%5.%}\n", 0);
-printf("Real return : %d\n", i);
-printf("My return : %d\n", j);
-return (0);
+
+ aprintf("{%#5o}", 42);
+ aprintf("{%*d}", -5, 42);
+ aprintf("{%30.25S}", L"我是一只猫。");
+ aprintf("{%4S}", L"我是一只猫。");
+ aprintf("{%S}", L"我");
+
+ return (0);
+// aprintf("{%4.4S}", L"我是一只猫。");
   /* Verifiez bien les bornes ! Elles ont tendance a boucler infini ... */
 
   ft_printf("Les bornes :  %d, %d\n", -2147483648, 2147483647);
