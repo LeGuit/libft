@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 13:59:17 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 14:01:45 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void				dlst_move_head(t_dlst *entry, t_dlst *head);
 void				dlst_move_tail(t_dlst *entry, t_dlst *head);
 void				dlst_rto_head(t_dlst *head);
 void				dlst_rto_tail(t_dlst *head);
-int					dlst_empty(t_dlst *dlst, t_dlst *head);
+int					dlst_empty(t_dlst *head);
 int					dlst_is_last(t_dlst *dslt, t_dlst *head);
+
 #endif
