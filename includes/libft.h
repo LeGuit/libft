@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 14:01:45 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 14:05:16 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,8 +148,8 @@ void				dlst_replace_init(t_dlst *old, t_dlst *new);
 void				dlst_del_init(t_dlst *entry);
 void				dlst_move_head(t_dlst *entry, t_dlst *head);
 void				dlst_move_tail(t_dlst *entry, t_dlst *head);
-void				dlst_rto_head(t_dlst *head);
-void				dlst_rto_tail(t_dlst *head);
+void				dlst_rotate(t_dlst *head);
+void				dlst_rrotate(t_dlst *head);
 int					dlst_empty(t_dlst *head);
 int					dlst_is_last(t_dlst *dslt, t_dlst *head);
 
