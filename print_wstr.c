@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 14:13:31 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/29 13:13:51 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 11:53:06 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static size_t	size_wc(int wc)
 	return (ft_strlen(tmp));
 }
 
-
 static size_t	sizew_to_print(t_mod *m, wchar_t *buf)
 {
 	int			i;
@@ -56,7 +55,7 @@ static size_t	sizew_to_print(t_mod *m, wchar_t *buf)
 	while (buf[i] && (flag ? (int)sizew < tmprec : 1))
 	{
 		if ((tmprec - sizew) < size_wc(buf[i]) && GET(m->flag, F_PREC))
-			break;
+			break ;
 		ft_widetoa(tmp, 5, (int)(buf[i]));
 		sizew += ft_strlen(tmp);
 		i++;
@@ -79,7 +78,7 @@ size_t			display_wstr(t_mod *m, wchar_t *buf)
 	while (GET(m->flag, F_PREC) ? sizew <= prec : *buf)
 	{
 		if ((prec - sizew) < size_wc(*buf) && GET(m->flag, F_PREC))
-			break;
+			break ;
 		ft_widetoa(tmp, 5, (int)(*buf));
 		ft_putstr(tmp);
 		sizew += size_wc(*buf);

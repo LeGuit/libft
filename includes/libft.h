@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 10:39:48 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 13:18:03 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,16 +105,16 @@ void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 void				ft_putnstr(char *str, size_t n);
 void				ft_putnstr_fd(char *str, size_t n, int fd);
-
+/*
+** Fonction list general
+*/
 typedef struct		s_list
 {
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-/*
-** Fonction list
-*/
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
@@ -123,5 +123,23 @@ void				ft_lstadd_last(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstfind(t_list *blist, void *ref, int (*cmp)());
+/*
+** Fonction list torvalds
+*/
+typedef struct		s_dlst
+{
+	struct s_dlst	*next;
+	struct s_dlst	*prev;
+}					t_dlst;
 
+void				dlst_init(t_dlst *dlst);
+int					dlst_empty(t_dlst *dlst);
+void				dlst_add(t_dlst *new, t_dlst *prev, t_dlst *next);
+void				dlst_add_head(t_dlst *dlst, t_dlst *new);
+void				dlst_add_tail(t_dlst *dlst, t_dlst *new);
+void				dlst_del(t_dlst *prev, t_dlst *next);
+void				dlst_del_entry(t_dlst *entry);
+void				dlst_replace(t_dlst *old, t_dlst *new);
+void				dlst_replace_init(t_dlst *old, t_dlst *new);
+void				dlst_del_init(t_dlst *entry);
 #endif

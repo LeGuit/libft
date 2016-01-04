@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 16:51:57 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 11:57:23 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ typedef struct				s_mod
 	char					prefix[3];
 }							t_mod;
 
-typedef int					(*fct_t)(t_mod *mod, va_list va);
+typedef int					(*t_fct)(t_mod *mod, va_list va);
 typedef unsigned long long	t_ull;
 typedef long long			t_ll;
 
@@ -77,11 +77,6 @@ int							print_c(t_mod *m, va_list ap);
 int							print_wstr(t_mod *m, va_list ap);
 size_t						display_space(t_mod *m, char *buf);
 int							null_case(char *arg);
-
 size_t						display_ui(t_mod *m, char *buf);
-
-//DEBUG
-
-void				print_struct(t_mod *m);
 
 #endif

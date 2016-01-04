@@ -6,13 +6,13 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 18:43:54 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/23 16:32:56 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 11:57:48 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
 
-static fct_t const	g_convtab[] =
+static t_fct const	g_convtab[] =
 {
 	['%'] = &print_modulo,
 	['s'] = &print_str,
