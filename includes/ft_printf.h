@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 11:57:23 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 13:59:40 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,6 @@
 # define MOD_J				(1u << 4)
 # define MOD_Z				(1u << 5)
 # define MOD_ALL			(MOD_HH | MOD_H | MOD_LL | MOD_L | MOD_J | MOD_Z)
-
-# define GET(i, mask)		(i & mask)
-# define SET(i, mask)		(i |= mask)
-# define UNSET(i, mask)		(i &= ~(mask))
-# define TOGGLE(i, mask)	(i ^= mask)
-# define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
 
 typedef struct				s_mod
 {

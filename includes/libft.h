@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 13:56:24 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 13:59:17 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,14 @@
 # include <string.h>
 # include <fcntl.h>
 
-# define ABS(x)		((x > 0) ? (x) : -(x))
-# define MIN(x, y)	((x) > (y) ? (y) : (x))
-# define MAX(x, y)	((x) < (y) ? (y) : (x))
+# define ABS(x)				((x > 0) ? (x) : -(x))
+# define MIN(x, y)			((x) > (y) ? (y) : (x))
+# define MAX(x, y)			((x) < (y) ? (y) : (x))
+# define GET(i, mask)		(i & mask)
+# define SET(i, mask)		(i |= mask)
+# define UNSET(i, mask)		(i &= ~(mask))
+# define TOGGLE(i, mask)	(i ^= mask)
+# define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
 
 /*
 ** Fonction Memory libc
