@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 13:18:03 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/04 13:56:24 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,13 +133,18 @@ typedef struct		s_dlst
 }					t_dlst;
 
 void				dlst_init(t_dlst *dlst);
-int					dlst_empty(t_dlst *dlst);
 void				dlst_add(t_dlst *new, t_dlst *prev, t_dlst *next);
-void				dlst_add_head(t_dlst *dlst, t_dlst *new);
-void				dlst_add_tail(t_dlst *dlst, t_dlst *new);
+void				dlst_add_head(t_dlst *new, t_dlst *dlst);
+void				dlst_add_tail(t_dlst *new, t_dlst *dlst);
 void				dlst_del(t_dlst *prev, t_dlst *next);
 void				dlst_del_entry(t_dlst *entry);
 void				dlst_replace(t_dlst *old, t_dlst *new);
 void				dlst_replace_init(t_dlst *old, t_dlst *new);
 void				dlst_del_init(t_dlst *entry);
+void				dlst_move_head(t_dlst *entry, t_dlst *head);
+void				dlst_move_tail(t_dlst *entry, t_dlst *head);
+void				dlst_rto_head(t_dlst *head);
+void				dlst_rto_tail(t_dlst *head);
+int					dlst_empty(t_dlst *dlst, t_dlst *head);
+int					dlst_is_last(t_dlst *dslt, t_dlst *head);
 #endif

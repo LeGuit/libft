@@ -1,37 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dlstcreate.c                                    :+:      :+:    :+:   */
+/*   ft_dlsttest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/01/04 13:06:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/04 13:36:22 by gwoodwar         ###   ########.fr       */
+/*   Created: 2016/01/04 13:36:32 by gwoodwar          #+#    #+#             */
+/*   Updated: 2016/01/04 13:43:15 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void		dlst_init(t_dlst *dlst)
+int			dlst_empty(t_dlst *head)
 {
-	dlst->next = dlst;
-	dlst->prev = dlst;
+	return (head->next == head);
 }
 
-void		dlst_add(t_dlst *new, t_dlst *prev, t_dlst *next)
+int			dlst_is_last(t_dlst *dlst, t_dlst *head)
 {
-	next->prev = new;
-	new->next = next;
-	new->prev = prev;
-	prev->next = new;
-}
-
-void		dlst_add_head(t_dlst *new, t_dlst *dlst)
-{
-	dlst_add(new, dlst, dlst->next);
-}
-
-void		dlst_add_tail(t_dlst *new, t_dlst *dlst)
-{
-	dlst_add(new, dlst->prev, dlst);
+	return (dlst->next == head);
 }
