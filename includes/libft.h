@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/11 11:54:40 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/12 15:10:10 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <fcntl.h>
+# include "ft_printf.h"
 
 # define ABS(x)				((x > 0) ? (x) : -(x))
 # define MIN(x, y)			((x) > (y) ? (y) : (x))
@@ -25,7 +26,7 @@
 # define UNSET(i, mask)		(i &= ~(mask))
 # define TOGGLE(i, mask)	(i ^= mask)
 # define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
-
+# define VECT_INI(type)		(t_vect){NULL, 0, 0, sizeof((type))}
 /*
 ** Fonction Memory libc
 */
@@ -153,4 +154,18 @@ void				dlst_rrotate(t_dlst *head);
 int					dlst_empty(t_dlst *head);
 int					dlst_is_last(t_dlst *dslt, t_dlst *head);
 void				dlst_swap(t_dlst *head);
+/*
+** Fonction vector
+*/
+typedef struct		s_vect
+{
+	void			*data;
+	size_t			size;
+	size_t			capacity;
+	size_t			element_size;
+}					t_vect;
+
+int					ft_vect_push_back(t_vect *vect, void *buf);
+int					ft_vect_reserve(t_vect *vect, size_t reserve);
+int					ft_vect_del(t_vect *vect, (*del)(void *));
 #endif
