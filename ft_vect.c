@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 14:02:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/12 15:22:44 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/12 16:30:59 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ int				ft_vect_push_back(t_vect *vect, void *buf)
 	{
 		tmp = vect->data;
 		vect->capacity = (vect->capacity ? vect->capacity * 2 : 1);
-		vect->data = malloc(vect->capacity * element_size);
+		vect->data = malloc(vect->capacity * vect->element_size);
 		if (!vect->data)
 			return (1);
 		vect->data = ft_memcpy(vect->data, tmp, vect->size);
 		free(tmp);
 	}
-	vect->data = ft_memcpy((vect->data + (vect->size * element_size)),
-			buf, element_size);
+	vect->data = ft_memcpy((vect->data + (vect->size * vect->element_size)),
+			buf, vect->element_size);
 	vect->size++;
 	return (0);
 }
@@ -39,7 +39,7 @@ int				ft_vect_reserve(t_vect *vect, size_t reserve)
 	if (reserve <= vect->capacity)
 		return (1);
 	tmp = vect->data;
-	vect->data = malloc(reserve * element_size);
+	vect->data = malloc(reserve * vect->element_size);
 	if (!vect->data)
 		return (1);
 	vect->data = ft_memcpy(vect->data, tmp, vect->size);
@@ -48,8 +48,10 @@ int				ft_vect_reserve(t_vect *vect, size_t reserve)
 	return (0);
 }
 
-int				ft_vect_del(t_vect *vect, (*del)(void *))
+int				ft_vect_del(t_vect *vect, int (*del)(void *))
 {
-	del(vect->data);
+	if (del(vect->data))
+		return (1);
 	vect = NULL;
+	return (0);
 }
