@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/12 16:31:16 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/19 11:43:05 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,13 @@
 # define TOGGLE(i, mask)	(i ^= mask)
 # define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
 # define VECT_INI(type)		(t_vect){NULL, 0, 0, sizeof((type))}
+# define C_RED				"\033[31m"
+# define C_BLU				"\033[34m"
+# define C_LMAG				"\033[35m"
+# define C_CYA				"\033[36m"
+# define B_YEL				"\033[43m"
+# define B_CYA				"\033[46m"
+
 /*
 ** Fonction Memory libc
 */
