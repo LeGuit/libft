@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/19 11:43:05 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/19 11:45:00 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,10 @@
 # define C_BLU				"\033[34m"
 # define C_LMAG				"\033[35m"
 # define C_CYA				"\033[36m"
+# define C_RES				"\033[39m"
 # define B_YEL				"\033[43m"
 # define B_CYA				"\033[46m"
+# define B_RES				"\033[49m"
 
 /*
 ** Fonction Memory libc
