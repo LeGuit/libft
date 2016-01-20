@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:24:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/20 19:50:44 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/20 19:53:15 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,17 +84,16 @@ int				dlst_is_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
 	return (1);
 }
 
-t_dlst			*dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
+void			dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
 {
 	t_dlst		newlst;
 	int			size;
 
 	if (dlst_is_singular(head))
-		return (head);
+		return ;
 	dlst_init(&newlst);
 	size = dlst_size(head) / 2;
 	dlst_cut_position(&newlst, head, dlst_go_to(head, size));
-	head = dlst_merge_sort(head, cmp);
+	dlst_merge_sort(head, cmp);
 	dlst_merge(head, &newlst, cmp);
-	return (head);
 }
