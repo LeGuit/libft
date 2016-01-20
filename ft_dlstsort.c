@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:24:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/20 17:59:43 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/20 18:03:16 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void			dlst_merge(t_dlst *heada, t_dlst *headb,
 	itb = headb->next;
 	while (!dlst_empty(headb))
 	{
-		if (cmp(ita, itb) > 0)
+		if (cmp(ita, itb))
 		{
 			dlst_add(itb, ita->prev, ita->next);
 			dlst_del_entry(itb);
@@ -76,7 +76,7 @@ int				dlst_is_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
 	{
 		if (it->next != head)
 		{
-			if (cmp(it, it->next) > 0)
+			if (cmp(it, it->next))
 				return (0);
 		}
 		it = it->next;
