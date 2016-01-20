@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/19 13:44:42 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/20 11:41:15 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 # define C_NODE(type,ptr)	((type *)ptr)
 # define C_RED				"\033[31m"
 # define C_BLU				"\033[34m"
-# define C_LMAG				"\033[35m"
-# define C_CYA				"\033[36m"
+# define C_MAG				"\033[35m"
+# define C_LCYA				"\033[96m"
 # define C_RES				"\033[39m"
 # define B_YEL				"\033[43m"
 # define B_CYA				"\033[46m"
