@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/04 13:36:32 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/20 16:57:37 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/20 17:58:16 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ int			dlst_is_singular(t_dlst *head)
 int			dlst_size(t_dlst *head)
 {
 	int		count;
-	t_dlst	it;
+	t_dlst	*it;
 
 	count = 0;
-	it = head.next;
+	it = head->next;
 	while (it != head)
 	{
 		count++;
 		it = it->next;
 	}
 	return (count);
+}
