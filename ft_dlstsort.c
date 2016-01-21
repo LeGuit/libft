@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:24:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/21 14:15:25 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/21 15:18:34 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,14 @@ void			dlst_merge(t_dlst *heada, t_dlst *headb,
 		{
 			ita = ita->next;
 			if (ita == heada)
-			{
-				while (!dlst_empty(headb))
-				{
-					dlst_del_entry(itb);
-					dlst_add_tail(itb, heada);
-					itb = headb->next;
-				}
-			}
+				break ;
 		}
+	}
+	while (!dlst_empty(headb))
+	{
+		dlst_del_entry(itb);
+		dlst_add_tail(itb, heada);
+		itb = headb->next;
 	}
 }
 
