@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:24:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/21 13:06:20 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/21 14:15:25 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void			dlst_cut_position(t_dlst *nlst, t_dlst *head, t_dlst *entry)
 {
-	t_dlst		*new;
+	t_dlst		*tmp;
 
 	if (dlst_empty(head))
 		return ;
@@ -24,13 +24,13 @@ void			dlst_cut_position(t_dlst *nlst, t_dlst *head, t_dlst *entry)
 		dlst_init(nlst);
 	else
 	{
-		new = entry->next;
+		tmp = entry->next;
 		nlst->next = head->next;
 		nlst->next->prev = nlst;
 		nlst->prev = entry;
 		entry->next = nlst;
-		head->next = new;
-		new->prev = head;
+		head->next = tmp;
+		tmp->prev = head;
 	}
 }
 
@@ -46,7 +46,6 @@ void			dlst_merge(t_dlst *heada, t_dlst *headb,
 		itb = headb->next;
 		if (cmp(ita, itb) > 0)
 		{
-			ft_putstr("IF");
 			dlst_del_entry(itb);
 			dlst_add(itb, ita->prev, ita);
 		}
@@ -54,13 +53,15 @@ void			dlst_merge(t_dlst *heada, t_dlst *headb,
 		{
 			ita = ita->next;
 			if (ita == heada)
-				break ;
+			{
+				while (!dlst_empty(headb))
+				{
+					dlst_del_entry(itb);
+					dlst_add_tail(itb, heada);
+					itb = headb->next;
+				}
+			}
 		}
-	}
-	while (!dlst_empty(headb))
-	{
-		dlst_del_entry(itb);
-		dlst_add(itb, ita->prev, ita);
 	}
 }
 
@@ -68,10 +69,10 @@ t_dlst			*dlst_go_to(t_dlst *head, int nb)
 {
 	t_dlst		*it;
 
-	it = head->next;
+	it = head->prev;
 	while (nb)
 	{
-		it = it->next;
+		it = it->prev;
 		nb--;
 	}
 	return (it);
@@ -82,7 +83,7 @@ void			dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
 	t_dlst		newlst;
 	int			size;
 
-	if (dlst_is_singular(head))
+	if (dlst_is_singular(head) || dlst_empty(head))
 		return ;
 	dlst_init(&newlst);
 	size = dlst_size(head) / 2;
