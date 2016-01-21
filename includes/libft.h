@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/21 13:05:21 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/21 13:14:31 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define TOGGLE(i, mask)	(i ^= mask)
 # define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
 # define VECT_INI(type)		(t_vect){NULL, 0, 0, sizeof((type))}
-# define C_NODE(type,ptr)	((type *)ptr)
+# define C_NODE(type,ptr)	((type *)(ptr))
 # define C_RED				"\033[31m"
 # define C_YEL				"\033[33m"
 # define C_BLU				"\033[34m"
