@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/20 19:52:32 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/21 13:05:21 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@
 # define VECT_INI(type)		(t_vect){NULL, 0, 0, sizeof((type))}
 # define C_NODE(type,ptr)	((type *)ptr)
 # define C_RED				"\033[31m"
+# define C_YEL				"\033[33m"
 # define C_BLU				"\033[34m"
 # define C_MAG				"\033[35m"
 # define C_LCYA				"\033[96m"
@@ -169,7 +170,6 @@ void				dlst_swap(t_dlst *head);
 void				dlst_cut_position(t_dlst *nlst, t_dlst *head, t_dlst *entry);
 void				dlst_merge(t_dlst *heada, t_dlst *headb, int (*cmp)(t_dlst *, t_dlst *));
 t_dlst				*dlst_go_to(t_dlst *head, int nb);
-int					dlst_is_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *));
 void				dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *));
 /*
 ** Fonction vector
