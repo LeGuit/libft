@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/21 13:14:31 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/01/21 15:23:13 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,10 +167,13 @@ int					dlst_is_last(t_dlst *dslt, t_dlst *head);
 int					dlst_is_singular(t_dlst *head);
 int					dlst_size(t_dlst *head);
 void				dlst_swap(t_dlst *head);
-void				dlst_cut_position(t_dlst *nlst, t_dlst *head, t_dlst *entry);
-void				dlst_merge(t_dlst *heada, t_dlst *headb, int (*cmp)(t_dlst *, t_dlst *));
+void				dlst_cut_position(t_dlst *nlst, t_dlst *head,
+					t_dlst *entry);
+void				dlst_merge(t_dlst *heada, t_dlst *headb,
+					int (*cmp)(t_dlst *, t_dlst *));
 t_dlst				*dlst_go_to(t_dlst *head, int nb);
-void				dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *));
+void				dlst_merge_sort(t_dlst *head,
+					int (*cmp)(t_dlst *, t_dlst *));
 /*
 ** Fonction vector
 */
