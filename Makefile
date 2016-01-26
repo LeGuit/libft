@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2016/01/21 15:25:43 by gwoodwar         ###   ########.fr        #
+#    Updated: 2016/01/26 13:23:20 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -104,6 +104,7 @@ SRCS =	ft_atoi.c \
 		ft_dlstmove.c \
 		ft_dlsttest.c \
 		ft_dlstsort.c \
+		ft_dlst_rev.c \
 		ft_vect.c
 
 OBJS = $(SRCS:.c=.o)
