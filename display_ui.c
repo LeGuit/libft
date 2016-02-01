@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2015/12/29 13:21:24 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/01 10:04:49 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ int				print_modulo(t_mod *m, va_list ap)
 	cnt = 1;
 	if (GET(m->flag, F_MINUS))
 		ft_putchar('%');
-	if (GET(m->flag, F_PREC))
+	if (GET(m->flag, F_PREC) || m->length)
 	{
 		while ((int)cnt < m->length)
 		{
