@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2016/01/26 13:48:55 by gwoodwar         ###   ########.fr        #
+#    Updated: 2016/02/01 10:14:44 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,6 +98,7 @@ SRCS =	ft_atoi.c \
 		print_c.c \
 		print_wstr.c \
 		display_ui.c \
+		ft_printf_prefix.c \
 		ft_wstrlen.c \
 		ft_dlstcreate.c \
 		ft_dlstdel.c \

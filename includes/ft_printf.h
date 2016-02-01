@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:20:08 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/12 16:29:39 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/01 10:13:26 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,6 @@ int							print_wstr(t_mod *m, va_list ap);
 size_t						display_space(t_mod *m, char *buf);
 int							null_case(char *arg);
 size_t						display_ui(t_mod *m, char *buf);
+size_t						display_prefix(t_mod *m, char *buf);
 
 #endif

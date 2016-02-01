@@ -6,39 +6,11 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/21 18:11:30 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/01 10:04:49 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/01 10:34:38 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf.h"
-
-static size_t	display_prefix(t_mod *m, char *buf)
-{
-	if (GET(m->flag, F_PTR) || (ft_strchr("xX", m->convers) && *buf != '0'))
-	{
-		if (GET(m->flag, F_HASH) && m->convers == 'x')
-			ft_strcpy(m->prefix, "0x");
-		if (GET(m->flag, F_HASH) && m->convers == 'X')
-			ft_strcpy(m->prefix, "0X");
-		if (GET(m->flag, F_HASH) && ft_strchr("xX", m->convers) && m->length)
-			m->length = ((m->length < 2) ? 2 : m->length - 2);
-		if (GET(m->flag, F_PTR) && GET(m->flag, F_PREC) && m->prec == 0)
-			m->length = 0;
-	}
-	if (GET(m->flag, F_PLUS) && ft_strchr("diD", m->convers))
-		ft_strcpy(m->prefix, "+");
-	if (GET(m->flag, F_NEG) && ft_strchr("diD", m->convers))
-		ft_strcpy(m->prefix, "-");
-	if (GET(m->flag, F_SPACE) && ft_strchr("diD", m->convers))
-		ft_strcpy(m->prefix, " ");
-	if (GET(m->flag, F_HASH) && m->convers == 'o' && m->prec <= ft_strlen(buf))
-		SET(m->flag, F_HO);
-	if (GET(m->flag, F_SPACE) && GET(m->flag, F_SPACE))
-		m->length--;
-	if (GET(m->flag, F_PREC) && m->prec == 0 && *buf == '0')
-		*buf = '\0';
-	return (ft_strlen(m->prefix));
-}
 
 static size_t	display_zero(t_mod *m, char *buf)
 {
@@ -65,6 +37,8 @@ size_t			display_space(t_mod *m, char *buf)
 		nospace = (m->prec < ft_strlen(buf) ? m->prec : ft_strlen(buf));
 	else
 		nospace = ((m->prec) ? MAX(m->prec, ft_strlen(buf)) : ft_strlen(buf));
+	if (GET(m->flag, F_ZERO) && GET(m->flag, F_PLUS) && m->prefix[0] == '-')
+		nospace--;
 	if (ft_strchr("c", m->convers) && !*buf)
 		nospace = 1;
 	if (GET(m->flag, F_HO))
