@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2016/02/01 10:14:44 by gwoodwar         ###   ########.fr        #
+#    Updated: 2016/02/02 10:04:00 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ TEST = ft_printf
 
 
 SRCS =	ft_atoi.c \
+		ft_atoll.c \
 		ft_bzero.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
