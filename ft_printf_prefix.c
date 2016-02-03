@@ -12,7 +12,7 @@
 
 #include "includes/ft_printf.h"
 
-static void			prefix_xX(t_mod *m, char *buf)
+static void			prefix_x(t_mod *m, char *buf)
 {
 	if (GET(m->flag, F_PTR) || (ft_strchr("xX", m->convers) && *buf != '0'))
 	{
@@ -26,9 +26,10 @@ static void			prefix_xX(t_mod *m, char *buf)
 			m->length = 0;
 	}
 }
-size_t			display_prefix(t_mod *m, char *buf)
+
+size_t				display_prefix(t_mod *m, char *buf)
 {
-	prefix_xX(m, buf);
+	prefix_x(m, buf);
 	if (GET(m->flag, F_PLUS) && ft_strchr("diD", m->convers))
 		ft_strcpy(m->prefix, "+");
 	if (GET(m->flag, F_NEG) && ft_strchr("diD", m->convers))
