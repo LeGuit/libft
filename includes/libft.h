@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/08 11:22:56 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/08 12:25:37 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ int					ft_isdigit(int c);
 int					ft_isascii(int c);
 int					ft_isalnum(int c);
 int					ft_isprint(int c);
+int					ft_size_nb(int nb);
 /*
 ** Fonction Manip
 */
