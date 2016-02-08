@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/02 10:04:28 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/08 11:22:56 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,6 +175,7 @@ void				dlst_merge(t_dlst *heada, t_dlst *headb,
 t_dlst				*dlst_go_to(t_dlst *head, int nb);
 void				dlst_merge_sort(t_dlst *head,
 					int (*cmp)(t_dlst *, t_dlst *));
+void				dlst_rev(t_dlst *head);
 /*
 ** Fonction vector
 */

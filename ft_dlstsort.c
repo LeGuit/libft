@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/20 16:24:23 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/01/21 15:18:34 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/08 11:28:43 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,22 @@ void			dlst_merge_sort(t_dlst *head, int (*cmp)(t_dlst *, t_dlst *))
 	dlst_merge_sort(head, cmp);
 	dlst_merge_sort(&newlst, cmp);
 	dlst_merge(head, &newlst, cmp);
+}
+
+void			dlst_rev(t_dlst *head)
+{
+	t_dlst		*it;
+	t_dlst		*tmp;
+
+	it = head->next;
+	while (it != head)
+	{
+		tmp = it->next;
+		it->next = it->prev;
+		it->prev = tmp;
+		it = it->prev;
+	}
+	tmp = head->next;
+	head->next = head->prev;
+	head->prev = tmp;
 }
