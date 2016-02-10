@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/08 12:25:37 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/10 11:47:58 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <fcntl.h>
 # include "ft_printf.h"
+# include "get_next_line.h"
 
 # define ABS(x)				((x > 0) ? (x) : -(x))
 # define MIN(x, y)			((x) > (y) ? (y) : (x))
