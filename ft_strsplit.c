@@ -46,14 +46,13 @@ char			**ft_strsplit(char const *s, char c)
 	size_t	count;
 	char	**res;
 	size_t	index;
+	size_t	nbstr;
 
-	if (!(res = (char **)malloc(sizeof(char *) * (nb_str(s, c) + 1))))
+	nbstr = nb_str(s, c);
+	if (!(res = (char **)malloc(sizeof(char *) * (nbstr + 1))))
 		return (NULL);
-	res[0] = NULL;
-	if (nb_str(s, c) == 0)
-		return (res);
 	index = 0;
-	while (index <= nb_str(s, c))
+	while (index < nbstr)
 	{
 		while (*s == c)
 			s++;
