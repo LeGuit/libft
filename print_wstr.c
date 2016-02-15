@@ -91,11 +91,9 @@ size_t			display_wstr(t_mod *m, wchar_t *buf)
 
 int				print_wstr(t_mod *m, va_list ap)
 {
-	size_t		i;
 	wchar_t		*arg;
 	size_t		size;
 
-	i = 0;
 	arg = va_arg(ap, wchar_t *);
 	if (null_case((char *)arg))
 		return (6);
