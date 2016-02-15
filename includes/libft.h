@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/10 11:47:58 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,4 +192,9 @@ typedef struct		s_vect
 int					ft_vect_push_back(t_vect *vect, void *buf);
 int					ft_vect_reserve(t_vect *vect, size_t reserve);
 int					ft_vect_del(t_vect *vect, int (*del)(void *));
+/*
+** Fonction vector
+*/
+char				**ft_tabdup(char **ptr);
+void				ft_tabdel(char ***tab);
 #endif

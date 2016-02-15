@@ -6,7 +6,7 @@
 #    By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/24 11:51:30 by gwoodwar          #+#    #+#              #
-#    Updated: 2016/02/10 11:48:26 by gwoodwar         ###   ########.fr        #
+#    Updated: 2016/02/15 17:54:08 by gwoodwar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,7 +108,9 @@ SRCS =	ft_atoi.c \
 		ft_dlstsort.c \
 		ft_vect.c \
 		ft_size_nb.c \
-		get_next_line.c
+		get_next_line.c \
+		ft_tabdel.c \
+		ft_tabdup.c
 
 OBJS = $(SRCS:.c=.o)
 
