@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/15 17:50:04 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:53:43 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/02/15 19:02:45 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ char			**ft_tabdup(char **ptr)
 		res[i] = ft_strdup(ptr[i]);
 		i++;
 	}
+	res[i] = 0;
 	return (res);
 }
