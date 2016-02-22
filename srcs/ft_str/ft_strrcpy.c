@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strrcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/12/14 11:54:44 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/12/14 11:56:50 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_str.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+char	*ft_strrcpy(char *dst, const char *src)
+{
+	int	i;
 
-#endif
+	i = ft_strlen(src);
+	dst[i] = '\0';
+	while (--i)
+		dst[i] = src[i];
+	return (dst);
+}

@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 16:15:20 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/11/24 20:21:41 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_str.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+char	*ft_strchr(const char *s, int c)
+{
+	char tmp;
 
-#endif
+	tmp = (char)c;
+	while (*s != tmp)
+	{
+		if (*s == '\0')
+			return (NULL);
+		s++;
+	}
+	return (char *)(s);
+}

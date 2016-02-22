@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/12/08 13:53:31 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/12/14 18:54:19 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_printf.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+int			ft_printf(const char *format, ...)
+{
+	va_list		ap;
+	int			res;
 
-#endif
+	va_start(ap, format);
+	res = ft_vprintf(format, ap);
+	va_end(ap);
+	return (res);
+}

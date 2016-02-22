@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 17:02:39 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/11/26 12:13:47 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_mem.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+void	*ft_memalloc(size_t size)
+{
+	unsigned char	*res;
 
-#endif
+	if (!(res = (unsigned char *)malloc(size)))
+		return (NULL);
+	else
+	{
+		while (size != 0)
+		{
+			res[size] = 0;
+			size--;
+		}
+		return (res);
+	}
+}

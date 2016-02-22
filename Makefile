@@ -12,129 +12,126 @@
 
 # For mem : @ before a commande hide the echo of the command
 
-CC =	gcc
-FLAGS =	-Wall -Werror -Wextra
-NAME =	libftprintf.a
-HEAD =	-I includes/
-TEST = ft_printf
+CC =		clang
+FLAGS =		-Wall -Werror -Wextra -O2
+NAME =		libft.a
+INCLS =		-I./includes
+SRCS_DIR =	srcs
+OBJS_DIR =	objs
 
-
-SRCS =	ft_atoi.c \
-		ft_atoll.c \
-		ft_bzero.c \
-		ft_isalnum.c \
-		ft_isalpha.c \
-		ft_isascii.c \
-		ft_isdigit.c \
-		ft_isprint.c \
-		ft_itoa.c \
-		ft_memalloc.c \
-		ft_memccpy.c \
-		ft_memcpy.c \
-		ft_memrcpy.c \
-		ft_memdel.c \
-		ft_memmove.c \
-		ft_memset.c \
-		ft_memchr.c \
-		ft_memcmp.c \
-		ft_putchar.c \
-		ft_putchar_fd.c \
-		ft_putendl.c \
-		ft_putendl_fd.c \
-		ft_putnbr.c \
-		ft_putnbr_fd.c \
-		ft_putstr.c \
-		ft_putstr_fd.c \
-		ft_strcat.c \
-		ft_strlcat.c \
-		ft_strchr.c \
-		ft_strclr.c \
-		ft_strcmp.c \
-		ft_strcpy.c \
-		ft_strrcpy.c \
-		ft_strdel.c \
-		ft_strdup.c \
-		ft_strequ.c \
-		ft_striter.c \
-		ft_striteri.c \
-		ft_strjoin.c \
-		ft_strlen.c \
-		ft_strmap.c \
-		ft_strmapi.c \
-		ft_strncat.c \
-		ft_strncmp.c \
-		ft_strncpy.c \
-		ft_strnequ.c \
-		ft_strnew.c \
-		ft_strnstr.c \
-		ft_strrchr.c \
-		ft_strstr.c \
-		ft_strsub.c \
-		ft_strtrim.c \
-		ft_strsplit.c \
-		ft_tolower.c \
-		ft_toupper.c \
-		ft_lstnew.c \
-		ft_lstdelone.c \
-		ft_lstdel.c \
-		ft_lstadd.c \
-		ft_lstiter.c \
-		ft_lstmap.c \
-		ft_strlen_ch.c \
-		ft_lstfind.c \
-		ft_putnstr.c \
-		ft_putnstr_fd.c \
-		ft_ulltstr_base.c \
-		ft_slltstr.c \
-		ft_widetoa.c \
-		ft_printf.c \
-		get_mod.c \
-		ft_vprintf.c \
-		conversion.c \
-		print_arg.c \
-		process_mod.c \
-		print_u.c \
-		print_sign.c \
-		print_str.c \
-		print_c.c \
-		print_wstr.c \
-		display_ui.c \
-		ft_printf_prefix.c \
-		ft_wstrlen.c \
-		ft_dlstcreate.c \
-		ft_dlstdel.c \
-		ft_dlstmove.c \
-		ft_dlsttest.c \
-		ft_dlstsort.c \
-		ft_vect.c \
-		ft_size_nb.c \
-		get_next_line.c \
-		ft_tabdel.c \
-		ft_tabdup.c \
-		ft_tabsize.c 
-
-OBJS = $(SRCS:.c=.o)
+LIST =	ft_dlst/ft_dlstcreate \
+		ft_dlst/ft_dlstdel \
+		ft_dlst/ft_dlstmove \
+		ft_dlst/ft_dlsttest \
+		ft_dlst/ft_dlstsort \
+		ft_gnl/get_next_line \
+		ft_is/ft_isalnum \
+		ft_is/ft_isalpha \
+		ft_is/ft_isascii \
+		ft_is/ft_isdigit \
+		ft_is/ft_isprint \
+		ft_lsts/ft_lstnew \
+		ft_lsts/ft_lstdelone \
+		ft_lsts/ft_lstdel \
+		ft_lsts/ft_lstadd \
+		ft_lsts/ft_lstiter \
+		ft_lsts/ft_lstmap \
+		ft_lsts/ft_lstfind \
+		ft_mem/ft_bzero \
+		ft_mem/ft_memalloc \
+		ft_mem/ft_memccpy \
+		ft_mem/ft_memcpy \
+		ft_mem/ft_memrcpy \
+		ft_mem/ft_memdel \
+		ft_mem/ft_memmove \
+		ft_mem/ft_memset \
+		ft_mem/ft_memchr \
+		ft_mem/ft_memcmp \
+		ft_printf/conversion \
+		ft_printf/print_arg \
+		ft_printf/process_mod \
+		ft_printf/print_u \
+		ft_printf/print_sign \
+		ft_printf/print_str \
+		ft_printf/print_c \
+		ft_printf/print_wstr \
+		ft_printf/display_ui \
+		ft_printf/ft_printf_prefix \
+		ft_printf/ft_wstrlen \
+		ft_printf/ft_printf \
+		ft_printf/get_mod \
+		ft_printf/ft_vprintf \
+		ft_puts/ft_putchar \
+		ft_puts/ft_putchar_fd \
+		ft_puts/ft_putendl \
+		ft_puts/ft_putendl_fd \
+		ft_puts/ft_putnbr \
+		ft_puts/ft_putnbr_fd \
+		ft_puts/ft_putstr \
+		ft_puts/ft_putstr_fd \
+		ft_puts/ft_putnstr \
+		ft_puts/ft_putnstr_fd \
+		ft_str/ft_strcat \
+		ft_str/ft_strchr \
+		ft_str/ft_strclr \
+		ft_str/ft_strcmp \
+		ft_str/ft_strcpy \
+		ft_str/ft_strdel \
+		ft_str/ft_strdup \
+		ft_str/ft_strequ \
+		ft_str/ft_striter \
+		ft_str/ft_striteri \
+		ft_str/ft_strjoin \
+		ft_str/ft_strlcat \
+		ft_str/ft_strlen \
+		ft_str/ft_strlen_ch \
+		ft_str/ft_strmap \
+		ft_str/ft_strmapi \
+		ft_str/ft_strncat \
+		ft_str/ft_strncmp \
+		ft_str/ft_strncpy \
+		ft_str/ft_strnequ \
+		ft_str/ft_strnew \
+		ft_str/ft_strnstr \
+		ft_str/ft_strrchr \
+		ft_str/ft_strrcpy \
+		ft_str/ft_strsplit \
+		ft_str/ft_strstr \
+		ft_str/ft_strsub \
+		ft_str/ft_strtrim \
+		ft_tabs/ft_tabdel \
+		ft_tabs/ft_tabdup \
+		ft_tabs/ft_tabsize \
+		ft_vect/ft_vect \
+		ft_xtoy/ft_atoi \
+		ft_xtoy/ft_atoll \
+		ft_xtoy/ft_itoa \
+		ft_xtoy/ft_size_nb \
+		ft_xtoy/ft_slltstr \
+		ft_xtoy/ft_tolower \
+		ft_xtoy/ft_toupper \
+		ft_xtoy/ft_ulltstr_base \
+		ft_xtoy/ft_widetoa 
+		
+SRCS := $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(LIST)))
+OBJS := $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(LIST)))
 
 all: $(NAME)
-
-test: $(TEST)
-
-$(TEST): $(NAME) 
-	$(CC) -o $@ main_test.c $^
 
 $(NAME): $(OBJS)
 	ar rc $@ $^
 	ranlib $@
 
-%.o: %.c
-	@$(CC) $(FLAGS) $(HEAD) -o $@ -c $<
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(FLAGS) $(INLCS) -o $@ -c $<
 
 clean:
-	@/bin/rm -f $(OBJS)
+	/bin/rm -rf $(OBJS_DIR)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 
-retest:fclean test
+.PHONY: re clean fclean all

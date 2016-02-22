@@ -1,29 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 17:59:56 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/12/01 18:09:30 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_xtoy.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+static int	size_str(int n)
+{
+	int		i;
 
-#endif
+	i = 0;
+	if (n < 0)
+		i++;
+	while (n != 0)
+	{
+		i++;
+		n /= 10;
+	}
+	return (i);
+}
+
+char		*ft_itoa(int n)
+{
+	int		i;
+	char	*res;
+
+	i = size_str(n);
+	res = ft_strnew(i);
+	if (n == 0)
+		return ("0");
+	if (n < 0)
+		res[0] = '-';
+	while (n != 0)
+	{
+		res[i - 1] = ABS(n % 10) + '0';
+		i--;
+		n /= 10;
+	}
+	return (res);
+}

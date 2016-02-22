@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_macro.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2016/02/22 15:51:50 by gwoodwar          #+#    #+#             */
+/*   Updated: 2016/02/22 15:53:16 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#ifndef _FT_MACRO_H
+# define _FT_MACRO_H
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+# define ABS(x)				((x > 0) ? (x) : -(x))
+# define MIN(x, y)			((x) > (y) ? (y) : (x))
+# define MAX(x, y)			((x) < (y) ? (y) : (x))
+
+# define GET(i, mask)		(i & mask)
+# define SET(i, mask)		(i |= mask)
+# define UNSET(i, mask)		(i &= ~(mask))
+# define TOGGLE(i, mask)	(i ^= mask)
+# define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
 
 #endif

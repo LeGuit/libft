@@ -14,6 +14,9 @@
 # define _FT_PRINTF_H
 
 # include <stdarg.h>
+# include <stddef.h>
+# include <stdint.h>
+
 # include "libft.h"
 
 # define F_HASH				(1u << 0)

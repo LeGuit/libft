@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 15:26:15 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/11/24 19:52:50 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_str.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
+{
+	size_t	nmax;
+	size_t	res;
+	size_t	i;
 
-#endif
+	nmax = size - ft_strlen(dst) - 1;
+	res = ft_strlen(src);
+	i = 0;
+	while (dst[i] && i < size)
+		i++;
+	res += ((i < size) ? i : size);
+	if ((int)nmax > 0)
+		ft_strncat(dst, src, nmax);
+	return (res);
+}

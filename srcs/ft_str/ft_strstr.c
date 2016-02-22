@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 09:43:55 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/15 17:47:54 by gwoodwar         ###   ########.fr       */
+/*   Created: 2015/11/23 16:17:51 by gwoodwar          #+#    #+#             */
+/*   Updated: 2015/11/30 17:45:44 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _LIBFT_H
-# define _LIBFT_H
+#include "../../includes/ft_str.h"
 
-# include "ft_printf.h"
-# include "get_next_line.h"
-# include "ft_is.h"
-# include "ft_lsts.h"
-# include "ft_mem.h"
-# include "ft_puts.h"
-# include "ft_str.h"
-# include "ft_tabs.h"
-# include "ft_vect.h"
-# include "ft_xtoy.h"
-# include "ft_macro.h"
-# include "ft_color.h"
+char	*ft_strstr(const char *s1, const char *s2)
+{
+	int		i;
+	int		j;
 
-#endif
+	if (!*s2)
+		return ((char *)s1);
+	i = 0;
+	while (s1[i])
+	{
+		j = 0;
+		while (s1[i + j] == s2[j] && (s2[j] != '\0'))
+		{
+			if (s1[i + j] == '\0')
+				return (NULL);
+			else
+				j++;
+		}
+		if (s2[j] == '\0')
+			return ((char *)s1 + i);
+		i++;
+	}
+	return (NULL);
+}
