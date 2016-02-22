@@ -110,7 +110,8 @@ SRCS =	ft_atoi.c \
 		ft_size_nb.c \
 		get_next_line.c \
 		ft_tabdel.c \
-		ft_tabdup.c
+		ft_tabdup.c \
+		ft_tabsize.c 
 
 OBJS = $(SRCS:.c=.o)
 
