@@ -102,6 +102,7 @@ LIST =	ft_dlst/ft_dlstcreate \
 		ft_tabs/ft_tabdel \
 		ft_tabs/ft_tabdup \
 		ft_tabs/ft_tabsize \
+		ft_tabs/ft_tab_add_str \
 		ft_vect/ft_vect \
 		ft_xtoy/ft_atoi \
 		ft_xtoy/ft_atoll \
@@ -111,7 +112,8 @@ LIST =	ft_dlst/ft_dlstcreate \
 		ft_xtoy/ft_tolower \
 		ft_xtoy/ft_toupper \
 		ft_xtoy/ft_ulltstr_base \
-		ft_xtoy/ft_widetoa 
+		ft_xtoy/ft_widetoa \
+		ft_xtoy/ft_nb_words
 		
 SRCS := $(addprefix $(SRCS_DIR)/, $(addsuffix .c, $(LIST)))
 OBJS := $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(LIST)))
