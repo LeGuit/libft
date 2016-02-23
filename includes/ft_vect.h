@@ -18,7 +18,7 @@
 
 # include "ft_mem.h"
 
-# define VECT_INI(type)		(t_vect){NULL, 0, 0, sizeof((type))}
+# define VECT_INI(type)		((t_vect){NULL, 0, 0, sizeof(type)})
 
 typedef struct		s_vect
 {
@@ -29,9 +29,9 @@ typedef struct		s_vect
 }					t_vect;
 
 void				*ft_vect_at(t_vect *vect, size_t i);
-int					ft_vect_push_back(t_vect *vect, void *buf);
+int					ft_vect_push_back(t_vect *vect, void *src);
 int					ft_vect_reserve(t_vect *vect, size_t reserve);
-int					ft_vect_del(t_vect *vect, int (*del)(void *));
-void				ft_vect_print();
+int					ft_vect_del(t_vect *vect, int (*del)());
+void				ft_vect_print(t_vect *vector, void (*print)());
 
 #endif

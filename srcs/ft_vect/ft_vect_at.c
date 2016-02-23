@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_vect.h"
+#include "ft_vect.h"
 
 void				*ft_vect_at(t_vect *vect, size_t i)
 {
-	return (vect->data + (i * sizeof(vect->element_size)))
+	return (vect->data + (i * (vect->element_size)));
 }

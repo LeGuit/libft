@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lsts.h"
-#include "../../includes/ft_mem.h"
+#include "ft_lsts.h"
+#include "ft_mem.h"
 
 t_list		*ft_lstnew(void const *content, size_t content_size)
 {

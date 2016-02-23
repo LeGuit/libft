@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_xtoy.h"
+#include "ft_xtoy.h"
 
 static int	len_str(unsigned long long n, size_t base)
 {

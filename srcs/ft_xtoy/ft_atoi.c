@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_xtoy.h"
+#include "ft_xtoy.h"
 
 int		ft_atoi(const char *str)
 {

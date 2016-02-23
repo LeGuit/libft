@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_dlst.h"
+#include "ft_dlst.h"
 
 void		dlst_init(t_dlst *dlst)
 {

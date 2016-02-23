@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_xtoy.h"
+#include "ft_xtoy.h"
 
 void		ft_widetoa(char *buf, size_t buf_size, int wc)
 {

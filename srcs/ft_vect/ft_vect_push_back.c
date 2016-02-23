@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_vect.h"
+#include "ft_vect.h"
 
-int				ft_vect_push_back(t_vect *vect, void *buf)
+int				ft_vect_push_back(t_vect *vect, void *src)
 {
 	void		*tmp;
 
@@ -23,11 +23,10 @@ int				ft_vect_push_back(t_vect *vect, void *buf)
 		vect->data = malloc(vect->capacity * vect->element_size);
 		if (!vect->data)
 			return (1);
-		vect->data = ft_memcpy(vect->data, tmp, vect->size);
+		ft_memcpy(vect->data, tmp, vect->size * vect->element_size);
 		free(tmp);
 	}
-	vect->data = ft_memcpy((vect->data + (vect->size * vect->element_size)),
-			buf, vect->element_size);
+	ft_memcpy(ft_vect_at(vect, vect->size), src, vect->element_size);
 	vect->size++;
 	return (0);
 }

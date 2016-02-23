@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_vect.h"
+#include "ft_vect.h"
 
-void				ft_vect_print(t_vect *vector, void (*print)(void *))
+void				ft_vect_print(t_vect *vector, void (*print)())
 {
 	size_t			i;
 

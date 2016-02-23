@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lsts.h"
+#include "ft_lsts.h"
 #include <unistd.h>
 
 void		ft_lstdelone(t_list **alst, void (*del)(void *, size_t))

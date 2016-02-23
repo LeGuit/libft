@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_dlst.h"
+#include "ft_dlst.h"
 
 void			dlst_cut_position(t_dlst *nlst, t_dlst *head, t_dlst *entry)
 {

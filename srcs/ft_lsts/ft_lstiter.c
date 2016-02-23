@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lsts.h"
+#include "ft_lsts.h"
 
 void		ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_mem.h"
+#include "ft_mem.h"
 
 void	*ft_memrcpy(void *dst, const void *src, size_t n)
 {

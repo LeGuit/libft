@@ -102,13 +102,11 @@ LIST =	ft_dlst/ft_dlstcreate \
 		ft_tabs/ft_tabdel \
 		ft_tabs/ft_tabdup \
 		ft_tabs/ft_tabsize \
-		ft_tabs/ft_tab_add_str \
 		ft_vect/ft_vect_at \
 		ft_vect/ft_vect_push_back \
 		ft_vect/ft_vect_reserve \
 		ft_vect/ft_vect_del \
 		ft_vect/ft_vect_print \
-		ft_vect/ft_
 		ft_xtoy/ft_atoi \
 		ft_xtoy/ft_atoll \
 		ft_xtoy/ft_itoa \
@@ -131,7 +129,7 @@ $(NAME): $(OBJS)
 
 $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c
 	@mkdir -p $(dir $@)
-	@$(CC) $(FLAGS) $(INLCS) -o $@ -c $<
+	$(CC) $(FLAGS) $(INCLS) -o $@ -c $<
 
 clean:
 	/bin/rm -rf $(OBJS_DIR)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_xtoy.h"
+#include "ft_xtoy.h"
 
 static int	size_str(int n)
 {

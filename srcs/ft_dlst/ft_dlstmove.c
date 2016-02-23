@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_dlst.h"
+#include "ft_dlst.h"
 
 void		dlst_move_head(t_dlst *dlst, t_dlst *head)
 {

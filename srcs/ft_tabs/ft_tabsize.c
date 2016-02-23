@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_tabs.h"
+#include "ft_tabs.h"
 
 size_t				ft_tabsize(char **tab)
 {

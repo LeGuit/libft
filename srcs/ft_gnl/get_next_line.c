@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/get_next_line.h"
+#include "get_next_line.h"
 
 static t_out	*seek_fd(int const fd, t_list **headptr)
 {

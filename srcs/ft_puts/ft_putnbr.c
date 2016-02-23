@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_puts.h"
+#include "ft_puts.h"
 
 void	ft_putnbr(int n)
 {

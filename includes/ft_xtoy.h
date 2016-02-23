@@ -29,6 +29,6 @@ char				*ft_itoa(int n);
 void				ft_ulltstr_base(unsigned long long n, char *base_strm,
 											char *buf);
 void				ft_slltstr(long long n, char *buf);
-size_t				nb_words(char const *s, char c);
+size_t				ft_nb_words(char const *s, char c);
 
 #endif

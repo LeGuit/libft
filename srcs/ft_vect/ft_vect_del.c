@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_vect.h"
+#include "ft_vect.h"
 
-int				ft_vect_del(t_vect *vect, int (*del)(void *))
+int				ft_vect_del(t_vect *vect, int (*del)())
 {
 	if (del(vect->data))
 		return (1);

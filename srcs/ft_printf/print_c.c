@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_printf.h"
+#include "ft_printf.h"
 #include <wchar.h>
 
 static int		get_arg_c(t_mod *m, va_list ap)

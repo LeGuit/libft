@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_vect.h"
+#include "ft_vect.h"
 
 int				ft_vect_reserve(t_vect *vect, size_t reserve)
 {

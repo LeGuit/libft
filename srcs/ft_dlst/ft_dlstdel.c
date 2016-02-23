@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_dlst.h"
+#include "ft_dlst.h"
 
 void		dlst_del(t_dlst *prev, t_dlst *next)
 {

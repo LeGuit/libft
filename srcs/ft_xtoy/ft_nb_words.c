@@ -12,7 +12,7 @@
 
 #include "ft_xtoy.h"
 
-size_t		nb_words(char const *s, char c)
+size_t		ft_nb_words(char const *s, char c)
 {
 	size_t	res;
 

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/ft_lsts.h"
+#include "ft_lsts.h"
 
 t_list	*ft_lstfind(t_list *blist, void *ref, int (*cmp)())
 {
