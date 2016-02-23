@@ -28,8 +28,10 @@ typedef struct		s_vect
 	size_t			element_size;
 }					t_vect;
 
+void				*ft_vect_at(t_vect *vect, size_t i);
 int					ft_vect_push_back(t_vect *vect, void *buf);
 int					ft_vect_reserve(t_vect *vect, size_t reserve);
 int					ft_vect_del(t_vect *vect, int (*del)(void *));
+void				ft_vect_print();
 
 #endif
