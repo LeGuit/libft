@@ -25,5 +25,6 @@
 # include "ft_xtoy.h"
 # include "ft_macro.h"
 # include "ft_color.h"
+# include "ft_draw.h"
 
 #endif
