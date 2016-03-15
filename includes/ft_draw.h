@@ -16,6 +16,14 @@
 # define W_WIDTH				1600
 # define W_HEIGHT				1200
 
+typedef struct		s_view
+{
+	float			xmax;
+	float			xmin;
+	float			ymax;
+	float			ymin;
+}					t_view;
+
 typedef struct		s_vec3i
 {
 	int				x;
@@ -35,7 +43,5 @@ typedef struct		s_image
 }					t_image;
 
 void				ft_put_pix_to_img(t_vec3i *v, t_image *i);
-int					ft_mlx_image_init(void *mlx_ptr, t_image *image, int width,
-					int height);
 int					mix_color(int c1, int c2, float lambda);
 #endif
