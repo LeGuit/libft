@@ -13,9 +13,6 @@
 #ifndef _FT_DRAW_H
 # define _FT_DRAW_H
 
-# define W_WIDTH				800
-# define W_HEIGHT				600
-
 typedef struct		s_view
 {
 	float			xmax;
