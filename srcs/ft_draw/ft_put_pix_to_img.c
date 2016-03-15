@@ -14,7 +14,7 @@
 
 #define CAST(type, ptr)				((type)(ptr))
 
-void				put_pix_to_img(t_vec3i *v, t_image *i)
+void				ft_put_pix_to_img(t_vec3i *v, t_image *i)
 {
 	int				off_x;
 	int				off_y;
