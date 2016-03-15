@@ -13,6 +13,9 @@
 #ifndef _FT_DRAW_H
 # define _FT_DRAW_H
 
+# define W_WIDTH				1600
+# define W_HEIGHT				1200
+
 typedef struct		s_vec3i
 {
 	int				x;

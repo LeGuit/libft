@@ -25,7 +25,6 @@ LIST =	ft_dlst/ft_dlstcreate \
 		ft_dlst/ft_dlsttest \
 		ft_dlst/ft_dlstsort \
 		ft_draw/ft_mix_color \
-		ft_draw/ft_mlx_to_img_init \
 		ft_draw/ft_put_pix_to_img \
 		ft_gnl/get_next_line \
 		ft_is/ft_isalnum \
