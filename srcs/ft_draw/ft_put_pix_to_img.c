@@ -22,7 +22,7 @@ void				ft_put_pix_to_img(t_vec3i *v, t_image *i)
 	off_x = (v->x);
 	off_y = (i->height - v->y) * i->width;
 	if (v->x < 0 || v->y < 0
-		|| v->x > i->width || v->y > i->height)
+		|| v->x >= i->width || v->y >= i->height)
 		return ;
 	CAST(int *, i->data)[off_x + off_y] = v->z;
 }
