@@ -24,6 +24,6 @@
 # define PRINT(i, mask)			ft_putchar(GET(i, mask) ? '1' : '0')
 
 # define MALLOC(type, count)	(type *)malloc(sizeof(type) * (count))
-# define T(i,j,width)			((j) + ((i) * (width)))
+# define T(i, j, width)			(((i) * (width)) + (j))
 
 #endif
