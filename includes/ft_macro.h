@@ -13,14 +13,17 @@
 #ifndef _FT_MACRO_H
 # define _FT_MACRO_H
 
-# define ABS(x)				((x > 0) ? (x) : -(x))
-# define MIN(x, y)			((x) > (y) ? (y) : (x))
-# define MAX(x, y)			((x) < (y) ? (y) : (x))
+# define ABS(x)					((x > 0) ? (x) : -(x))
+# define MIN(x, y)				((x) > (y) ? (y) : (x))
+# define MAX(x, y)				((x) < (y) ? (y) : (x))
 
-# define GET(i, mask)		(i & mask)
-# define SET(i, mask)		(i |= mask)
-# define UNSET(i, mask)		(i &= ~(mask))
-# define TOGGLE(i, mask)	(i ^= mask)
-# define PRINT(i, mask)		ft_putchar(GET(i, mask) ? '1' : '0')
+# define GET(i, mask)			(i & mask)
+# define SET(i, mask)			(i |= mask)
+# define UNSET(i, mask)			(i &= ~(mask))
+# define TOGGLE(i, mask)		(i ^= mask)
+# define PRINT(i, mask)			ft_putchar(GET(i, mask) ? '1' : '0')
+
+# define MALLOC(type, count)	((type) *)malloc(sizeof(type) * (count))
+# define T(i,j,width)			((j) + ((i) * (width)))
 
 #endif
