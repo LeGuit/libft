@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:10:09 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/22 14:15:43 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/06/29 13:46:52 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _FT_DLST_H
 
 # define C_NODE(type,ptr)	((type *)(ptr))
+# define DLST_INIT(DLST)	((t_dlst){DLST,DLST})
 
 typedef struct		s_dlst
 {
