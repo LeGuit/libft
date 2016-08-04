@@ -6,7 +6,7 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 15:51:50 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/02/22 15:53:16 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/08/04 16:06:38 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@
 
 # define MALLOC(type, count)	(type *)malloc(sizeof(type) * (count))
 # define T(i, j, width)			(((i) * (width)) + (j))
+
+# define OFFSETOF(st, m)			((size_t)(&(((st*)0)->m)))
+# define CONTAINEROF(ptr, st, m)	((st*)((char*)(ptr) - OFFSETOF(st,m)))
 
 #endif

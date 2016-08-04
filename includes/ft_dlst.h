@@ -6,15 +6,17 @@
 /*   By: gwoodwar <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/02/22 14:10:09 by gwoodwar          #+#    #+#             */
-/*   Updated: 2016/06/29 13:46:52 by gwoodwar         ###   ########.fr       */
+/*   Updated: 2016/08/04 16:10:10 by gwoodwar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _FT_DLST_H
 # define _FT_DLST_H
 
-# define C_NODE(type,ptr)	((type *)(ptr))
-# define DLST_INIT(DLST)	((t_dlst){DLST,DLST})
+# define C_NODE(type,ptr)		((type *)(ptr))
+# define DLST_HEAD(name)		(t_dlst){&(name), &(name)}
+# define DLST_HEAD_NULL		(t_dlst){0, 0}
+# define DLST_HEAD_INIT(name)	name = DLST_HEAD(name)
 
 typedef struct		s_dlst
 {
